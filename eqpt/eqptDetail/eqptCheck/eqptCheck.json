@@ -1,0 +1,8 @@
+{
+
+"usingComponents": {
+  "uploader": "/fishbearComponents/uploader/uploader"
+},
+  "navigationBarTitleText": "创建资产点检单"
+
+}

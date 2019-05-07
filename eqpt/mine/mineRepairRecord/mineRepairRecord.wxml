@@ -1,0 +1,124 @@
+<!--eqpt/mine/mineRepairRecord/mineRepairRecord.wxml-->
+<!-- <view>
+  <view class="whiteBlock smallGap" bindtap='repairEvalueDetail'>
+    <view>
+      <image class="imgInBlock" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0"></image>
+
+   
+    </view>
+    <view class="textInBlock">
+
+      <view class="cText">
+
+        <view class="c1Text"> JF-EP-001 </view>
+        <view class="c2Text" bindtap='repairEvalue'>维修评价</view>
+
+      </view>
+
+
+      <view class="remarkText">
+        <view class="c1Text">张三</view>
+        <view>2018-04-16</view>
+
+        <view class="c2Text">2018-04-19</view>
+
+
+      </view>
+
+      <view class="remark">报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注</view>
+    </view>
+
+
+  </view>
+
+
+
+
+  <view class="whiteBlock smallGap" bindtap='checkPersonalDetail'>
+    <image class="imgInBlock" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0"></image>
+
+
+    <view class="textInBlock">
+
+      <view class="cText">
+
+        <view class="c1Text"> 惠普电脑 </view>
+        <view class="c2Text">EP8605</view>
+      </view>
+
+
+      <view class="remarkText">
+        <view class="c1Text">JF-EP-001</view>
+        <view class="c3Text">李四</view>
+        <view class="c2Text">资产警告</view>
+      </view>
+
+
+    </view>
+
+
+
+
+  </view>
+</view> -->
+
+
+<view>
+
+<!-- 引用组件的模板 -->
+
+    
+          <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <block wx:for="{{repairList}}" wx:key="{{item.fID.value}}">
+
+        <navigator url="" class="weui-media-box weui-media-box_appmsg whiteBlock" bindtap='repairDetail' id="{{item.fID.value}}">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.fEqpImg1}}" mode="aspectFill" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view>
+              <view class="cText">
+                <view class="weui-media-box__title c1Text">{{item.fEqpNum.value}}/{{item.fEqpSize.value}}</view>
+                <view class="c2Text" id="{{item.fID.value}}" wx:if="{{item.score.value}}">{{item.score.value}} 分</view>
+
+                <!-- <view class="c2Text" wx:if="{{!item.score.value}}" bindtap='repairEvalue' id="{{item.fID.value}}" data-index='{{index}}'>
+                  <image src="/image/giveEvalue.png" class="positionImg"></image>
+
+                </view> -->
+              </view>
+              <view class="weui-media-box__desc c1Text">{{item.fName.value}} </view>
+            </view>
+            <view class="weui-media-box__info info">
+      
+              <view class="weui-media-box__info__meta ">{{item.fProdCount.value}} 分钟</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra meta">{{item.fdate}}</view>
+
+            </view>
+          </view>
+        </navigator>
+
+
+      </block>
+    </view>
+  </view>
+  <block wx:if="{{isLoading }}">
+    <view class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore_tips">上拉加载更多</view>
+    </view>
+
+  </block>
+
+
+  <block wx:if="{{!isLoading }}">
+    <view class="weui-loadmore weui-loadmore_line">
+      <view class="weui-loadmore_tips weui-loadmore_tips_in-line">加载完成</view>
+    </view>
+  </block>
+
+
+
+</view>

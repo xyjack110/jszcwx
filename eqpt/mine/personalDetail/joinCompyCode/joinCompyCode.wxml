@@ -1,0 +1,19 @@
+<!--eqpt/mine/personalDetail/joinCompyCode/joinCompyCode.wxml-->
+
+<view>
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="{{src}}"></image>
+  </view>
+
+
+
+
+
+
+
+  <view class="Text">
+    <view>请接收方，使用微信扫描该二维码，加入成为我的同事</view>
+
+
+  </view>
+</view>

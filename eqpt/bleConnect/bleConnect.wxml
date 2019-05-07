@@ -1,0 +1,20 @@
+<button class="btn" type="primary" bindtap="startSearch" loading='{{isScanning}}'> 搜索打印机 </button>
+  <view  wx:for="{{list}}" wx:for-item="item" 
+         data-title="{{item.deviceId}}" 
+         data-name="{{item.name}}" 
+         data-advertisData="{{item.advertisServiceUUIDs}}" 
+         wx:key="{{item.deviceId}}"
+         bindtap="bindViewTap">
+      <view  class="item">
+      <div class="deviceId block">{{item.deviceId}}</div>
+      <div class="name block">{{item.name}}</div>
+            <div class="status">连接状态:{{blueTooh?"已连接":"未连接"}}</div>
+     </view>    
+
+
+</view>  
+<view class="address-add" >
+     <button class="btn" type="primary" bindtap="printEqpt" wx:if="{{selectedEqptIDs&&blueTooh}}"> 打印 </button><!-- -->
+    </view>
+ 
+ 

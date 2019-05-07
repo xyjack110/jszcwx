@@ -1,0 +1,24 @@
+<!--eqpt/management/checkSet/checkSet.wxml-->
+<view class="page-body">
+<view class="page-section">
+  <view class="SureBtn">
+    <button type='primary' bindtap='checkSetDetail'> 增加资产类别</button>
+  </view>
+
+  <block wx:for="{{detailList}}" wx:key="{{item.itemName}}">
+    <view data-index="{{index}}"data-eqptID="{{item.fEqpTypeID.value}}" data-cmptID="{{item.fCompanyID.value}}" class="whiteBlock lineGap" bindtap='checkSetDetail' hover-class="weui-cell_active">
+
+      <view class="textInBlock">
+        {{item.fEqptTypeName.value}}
+
+      </view>
+      <view class="remarkText">
+        <text>{{item.fCheckCount.value}}项</text>
+      </view>
+      <view class='navigator-arrow'></view>
+    </view>
+
+
+  </block>
+</view>
+</view>

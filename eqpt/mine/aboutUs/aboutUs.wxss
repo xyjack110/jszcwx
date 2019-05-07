@@ -1,0 +1,22 @@
+/* eqpt/mine/aboutUs/aboutUs.wxss */
+
+.page-foot{
+  margin: 100rpx 0 30rpx 0;
+  text-align: center;
+  color: #BEBEBE;
+  font-size: 24rpx;
+}
+
+.logoImg{
+    width: 240rpx;
+  height: 240rpx;
+border-radius: 50%;
+
+}
+.text{
+ color:#999999;
+
+}
+.tt{
+  margin: 0 20rpx
+}

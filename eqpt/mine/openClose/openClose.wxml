@@ -1,0 +1,125 @@
+<!--eqpt/mine/openClose/openClose.wxml-->
+
+<view class="container">
+
+
+  <view class="page-body">
+
+
+    <view class="page-section">
+      <view class="page-section-title">设置首页菜单项的显示与隐藏</view>
+      <view class="weui-cells weui-cells_after-title">
+        <!-- <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">创建资产信息</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.creatEqptInfo}}" bindchange="switchChange" />
+          </view>
+        </view> -->
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们使用的资产</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.EqptUse}}" bindchange="switchChange1" />
+          </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们的工作录入</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.workRecord}}" bindchange="switchChange10" />
+          </view>
+        </view>
+
+
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们的报修记录</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.repairInfoRecord}}" bindchange="switchChange2" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们发出的评价</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.evalue}}" bindchange="switchChange3" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">待盘点清单</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.WaitCheckList}}" bindchange="switchChange11" />
+          </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们的点检/盘点记录</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.checkRecord}}" bindchange="switchChange12" />
+          </view>
+        </view>
+
+
+         <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们的领用资产记录</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.eqptUseRecord}}" bindchange="switchChange13" />
+          </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们的维修记录</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.repairRecord}}" bindchange="switchChange4" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">我们收到的评价</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.receiveEvalue}}" bindchange="switchChange5" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">维修次数排行榜</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.repairNumRank}}" bindchange="switchChange6" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">维修评分排行榜</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.repairScore}}" bindchange="switchChange7" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">报修响应排行榜</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.repairAvgTime}}" bindchange="switchChange8" />
+          </view>
+        </view>
+
+
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">其他操作记录</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{openInfo.other}}" bindchange="switchChange9" />
+          </view>
+        </view>
+
+
+
+      </view>
+    </view>
+  </view>
+
+
+</view>

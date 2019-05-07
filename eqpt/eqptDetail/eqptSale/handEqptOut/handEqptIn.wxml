@@ -1,0 +1,122 @@
+<!--eqpt/eqptDetail/eqptSale/handEqptOut/handEqptIn.wxml-->
+<wxs module="m1">
+  var dateformat = function(date) {
+
+
+    return date.substring(0,10) ;
+  }
+
+  module.exports.dateformat = dateformat;
+</wxs>
+
+
+<view>
+
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="{{eqptDetail.fEqpImg1}}" mode="aspectFill" bindtap='previewImage'></image>
+  </view>
+
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      资产类别
+    </view>
+    <view class="textInBlock">{{eqptDetail.fEqpType.value}} </view>
+  </view>
+
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      规格型号
+    </view>
+    <view class="textInBlock">{{eqptDetail.fEqpSize.value}}</view>
+  </view>
+
+    <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      生产厂家
+    </view>
+    <view class="textInBlock">{{eqptDetail.fProducer.value}}</view>
+  </view>
+
+    <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      出厂日期
+    </view>
+    <view class="textInBlock">{{eqptDetail.fEqptDate.value}}</view>
+  </view>
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+  {{eqptDetail.fEqpDesc.value}}
+    </view>
+
+  </view>
+
+
+
+  <view class="whiteBlock bigGap">
+
+    <view class="remarkText">
+      当前用户
+    </view>
+    <view class="textInBlock">{{eqptDetail.fPsnName.value}}</view>
+    <image class="useImgEqpt" src="{{eqptDetail.fPsnImg.value}}"></image>
+  </view>
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      资产状态
+    </view>
+    <view class="textInBlock">{{eqptDetail.fEqpStatus.value}}</view>
+  </view>
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      当前报修
+    </view>
+    <view class="textInBlock">{{currentEqptRepairInfo.fOperationTime.value?m1.dateformat(currentEqptRepairInfo.fOperationTime.value):""}}</view>
+  </view>
+
+
+
+
+
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      最近点检
+    </view>
+    <view class="textInBlock">2018-08-08</view>
+    <image class="useImgEqpt" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0"></image>
+  </view>
+
+
+ <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      当前盘点单
+    </view>
+    <view class="textInBlock">2018-08-18</view>
+    <image class="useImgEqpt" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0"></image>
+  </view>
+
+  <view class="bigGap">
+    <button class="remarkCenterText" type="primary" bindtap='saveBtn'> 保存</button>
+  </view>
+
+
+
+
+
+
+
+</view>

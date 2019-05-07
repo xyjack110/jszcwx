@@ -1,0 +1,56 @@
+<!--eqpt/mine/repairEvalueDetail/repairEvalueDetail.wxml-->
+<view>
+
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="/image/012.gif"></image>
+  </view>
+
+  <view class="weui-panel weui-panel_access">
+
+    <view class="weui-panel__bd">
+      <navigator url="" class="weui-media-box weui-media-box_appmsg whiteBlock">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view>
+
+            <view class="cText">
+              <view class="weui-media-box__title c1Text">EP8605/JF-EP-001</view>
+              <view class="c2Text">2018-10-18</view>
+            </view>
+            <view class="weui-media-box__desc"> 报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注</view>
+          </view>
+          <view class="weui-media-box__info" bindtap='repairRecord'>
+            <view class="weui-media-box__info__meta">张三</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">2018-08-18</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" bindtap='repairEvalue'>维修评价</view>
+          </view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-media-box weui-media-box_appmsg whiteBlock">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view>
+            <view class="cText">
+              <view class="weui-media-box__title c1Text">EP8605/JF-EP-001</view>
+              <view class="c2Text">2018-10-18</view>
+            </view>
+            <view class="weui-media-box__desc">报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注报修备注</view>
+          </view>
+          <view class="weui-media-box__info" bindtap='repairRecord'>
+            <view class="weui-media-box__info__meta">张三</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">2018-08-18</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" bindtap='repairEvalue'>维修评价</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+
+
+</view>

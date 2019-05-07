@@ -1,0 +1,49 @@
+<!--eqpt/mine/personalDetail/mineLowerLevelPsn.wxml-->
+<view>
+
+<block wx:for="{{personList}}" wx:key="{{fID.value}}">
+  <view class="whiteBlock smallGap" id="{{item.fPsnID.value}}">
+    <image class="imgInBlock" src="{{item.fPsnImg.value}}" mode="aspectFill"></image>
+
+
+    <view class="textInBlock">
+
+
+      <view class="remarkText">
+        <view class="c1Text">{{item.fPsnName.value}}{{item.fCellphone.value}}</view>
+       <view class="c2Text" > {{item.fMyDept.value}}</view>
+
+        
+
+
+      </view>
+
+
+      <view class="cText">
+
+        <view class="c3Text"> {{item.fDeptFName.value}} </view>
+        <view class="c2Text" > {{item.fPsnAuth.value}}</view>
+
+      </view>
+
+    </view>
+
+  </view>
+
+</block>
+
+ <view class="weui-loadmore "  hidden="{{!isLoading}} ">
+      <view class="weui-loading "></view>
+      <view class="weui-loadmore_tips ">上拉加载更多</view>
+    </view>
+
+
+
+
+ 
+    <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading}}" >
+      <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+    </view>
+
+</view>
+

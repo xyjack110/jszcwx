@@ -1,0 +1,11 @@
+/* login/joinUS/joinUS.wxss */
+.userinfo-avatar {
+  /* border-radius: 128rpx; */
+  width: 180rpx;
+  height: 180rpx;
+}
+.txt{
+  text-align:left;
+margin-left:120rpx;
+
+}

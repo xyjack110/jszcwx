@@ -1,0 +1,38 @@
+<template name="wxStar">
+
+
+ 
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title bigGap">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">总的评分</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="body-view">
+
+
+
+              <view class='wx-star-panel'>
+                <view class='wx-star' wx:for="{{wxStar}}" wx:for-item="starItem" wx:for-index="idx" wx:key="{{idx}}">
+                  <view class='wx-half-star {{index==0?"wx-star-left":"wx-star-right"}} {{item==1?"wx-star-checked":""}}' wx:for="{{starItem}}" wx:key="{{index}}" bindtap='wxStarChange' data-index='{{index}}' data-idx='{{idx}}'>★</view>
+                </view>
+              </view>
+
+
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+
+
+
+
+
+
+  
+  </view>
+
+</template>

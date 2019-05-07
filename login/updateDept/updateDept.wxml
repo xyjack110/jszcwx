@@ -1,0 +1,23 @@
+<!--login/updateDept/updateDept.wxml-->
+<view>
+
+  <view class="weui-toptips weui-toptips_warn " wx:if="{{showTopTips}}">{{ErrorMsg}}</view>
+
+
+  <view class="weui-cells weui-cells_after-title samllGap">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">部门名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input placeholder='输入部门名称' bindinput='inputChange' value='{{fDeptName}}'></input>
+      </view>
+    </view>
+  </view>
+
+
+<view class="SureBtn">
+  <button type="primary" bindtap='updataNameBtn'> 确定</button>
+</view>
+
+</view>

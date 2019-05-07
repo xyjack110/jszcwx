@@ -1,0 +1,21 @@
+<!--eqpt/mine/traindingList/traindingList.wxml-->
+
+
+<view class="weui-panel weui-panel_access">
+
+    <view class="weui-panel__bd">
+  <block wx:for='{{fileList}}' wx:key="{{item.fTitle.value}}">
+
+      <view class="weui-media-box weui-media-box_text" bindtap='checkVideoTrain' id="{{item.fSrc.value}}">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.fTitle.value}}</view>
+        <view class="weui-media-box__desc">{{item.fDesc.value}}</view>
+      </view>
+    </block>
+</view>
+<view class="weui-panel__ft" bindtap='previewImage' >
+  <view class="weui-cell weui-cell_access weui-cell_link">
+    <view class="weui-cell__bd">培训内容来自公众号《鱼熊企管咨询》</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
+</view>

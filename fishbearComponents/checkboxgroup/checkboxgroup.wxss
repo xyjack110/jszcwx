@@ -1,0 +1,2 @@
+/* fishbearComponents/checkboxgroup/checkboxgroup.wxss */
+ @import '../weui.wxss'; 

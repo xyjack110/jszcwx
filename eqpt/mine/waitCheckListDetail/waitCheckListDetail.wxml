@@ -1,0 +1,48 @@
+<!--eqpt/mine/waitCheckListDetail/waitCheckListDetail.wxml-->
+
+<view>
+
+
+  <view class="weui-panel weui-panel_access">
+
+    <view class="weui-panel__bd">
+
+    <block wx:for="{{InventoryList}}" wx:key="a">
+      <navigator url="" class="weui-media-box weui-media-box_appmsg whiteBlock" bindtap='InventoryDetail'data-index="{{index}}" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" >
+          <image class="weui-media-box__thumb" src="{{item.fPsnImg.value}}" mode="aspectFill"/>  
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view>
+            <view class="weui-media-box__title" bindtap='closeRepair'>{{item.fPsnName.value}}</view>
+            <view class="weui-media-box__desc"> {{item.fName.value}}</view>
+          </view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">{{item.fdate}}</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.total.value-item.checkedCount.value}}台未盘点</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">共{{item.total.value}}台</view>
+          </view>
+        </view>
+      </navigator>
+      </block>
+     
+    </view>
+
+  </view>
+
+
+
+  <view class="weui-loadmore " hidden="{{!isLoading}} ">
+    <view class="weui-loading "></view>
+    <view class="weui-loadmore_tips ">上拉加载更多</view>
+  </view>
+
+
+
+
+
+  <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading}}">
+    <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+  </view>
+
+</view>

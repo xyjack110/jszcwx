@@ -1,0 +1,12 @@
+/* eqpt/mine/personalDetail/personalDetailPhone/personalDetailPhone.wxss */
+
+
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+
+.samllGap{
+margin: 50rpx 0 10rpx;
+  
+}

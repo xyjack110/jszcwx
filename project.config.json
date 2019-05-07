@@ -1,0 +1,123 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.2",
+	"appid": "wx49f40760f0ad4ba3",
+	"projectname": "%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86new",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": 0,
+					"name": "加入部门确认",
+					"pathName": "eqpt/mine/personalDetail/joinUs/confirmJoin",
+					"query": "scene=ooO635cDqTduW5BRkQauYu-KPfxE",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "接受对方权限确认",
+					"pathName": "eqpt/mine/personalDetail/handOut/handIn",
+					"query": "userID=ooO635Ufnj92FPVddFqjl-DfhgxQ",
+					"scene": "1001"
+				},
+				{
+					"id": 2,
+					"name": "接受资产确认",
+					"pathName": "eqpt/eqptDetail/eqptSale/handEqptOut/handEqptIn",
+					"query": "userID=15336055867335120",
+					"scene": "1001"
+				},
+				{
+					"id": 3,
+					"name": "扫描资产二维码",
+					"pathName": "eqpt/eqptDetail/eqptDetail",
+					"query": "scene=44bbf05dbd7f4d4fb83ad47f41a6c13b",
+					"scene": 1001
+				},
+				{
+					"id": 4,
+					"name": "分享",
+					"pathName": "eqpt/eqptDetail/RepairInfo/checkRepairInfoDetail",
+					"query": "fID=mbstqpzhrt&flag=zf",
+					"scene": "1001"
+				},
+				{
+					"id": 5,
+					"name": "培训资料",
+					"pathName": "eqpt/mine/videoTrain/videoTrain",
+					"query": "src=https%3A//mp.weixin.qq.com/s%3F__biz%3DMzAxNDI2MTA0OA%3D%3D%26mid%3D2650045529%26idx%3D2%26sn%3D2984f66dc7503992761e42fb473ba70f%26chksm%3D8396d20eb4e15b186a21a1c4d079891d4f87186b616dea6c87c86eb30a26d06eca28e34383b3%23rd",
+					"scene": "1001"
+				},
+				{
+					"id": 6,
+					"name": "加入公司确认",
+					"pathName": "eqpt/mine/personalDetail/joinCompy/joinCompy",
+					"query": "userID=ooO635cDqTduW5BRkQauYu-KPfxE",
+					"scene": "1001"
+				},
+				{
+					"id": 7,
+					"name": "权利移交",
+					"pathName": "eqpt/mine/transferAuth/transferAuth",
+					"query": "scene=ooO635cDqTduW5BRkQauYu-KPfxE",
+					"scene": "1001"
+				},
+				{
+					"id": 8,
+					"name": "接受邀請",
+					"pathName": "login/joinUS/joinUS",
+					"query": "imgsrc=https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI2Q8UutbcNCibrHyUVzPtm5ibftpic72lXxtwUJ3yq0XEawfEhz3UPXqPNTabcHn4G5iauFLmfLM2Nbw/132&deptName=魚熊企管咨詢/工程部&managerName=魚熊企管咨詢/劉文生&session=2018-02-12 12:25:21&managerID=d909715b4f3d4933af8c14edba90eb63&deptID=e9f6b8d14ef5457983b778578c61e56c",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "接受权限",
+					"pathName": "login/managerChange/managerChange",
+					"query": "imgsrc=https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI2Q8UutbcNCibrHyUVzPtm5ibftpic72lXxtwUJ3yq0XEawfEhz3UPXqPNTabcHn4G5iauFLmfLM2Nbw/132&deptName=魚熊企管咨詢/工程部&managerName=魚熊企管咨詢/劉文生&session=2019-03-12 12:25:21&managerID=e6ae9eacb0e948de955f07149564ec50&deptID=e9f6b8d14ef5457983b778578c61e56c",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "顶级权限交接",
+					"pathName": "login/managerChange/managerChange",
+					"query": "imgsrc=https://wx.qlogo.cn/mmopen/vi_32/ueWNR1W4WibHPKuFxaldpcFDcb1OHMEuGOFllJ77522h7lD0yNpGibAGOvjjMA3uMUibhOu7CibibMbmMxTt9ANibkibw/132&managerName=个人/徐先生&managerID=ab01f0232d564ad191fb2c9ab3bf0b3b&session=2019-04-07 09:34:15",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "接二维码",
+					"pathName": "login/joinUSCode/joinUSCode",
+					"query": "scen=d98fbc32ba684c818efe22cfc5f8ad14",
+					"scene": null
+				}
+			]
+		}
+	}
+}

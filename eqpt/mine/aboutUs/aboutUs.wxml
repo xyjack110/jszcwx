@@ -1,0 +1,63 @@
+<!--eqpt/mine/aboutUs/aboutUs.wxml-->
+<view class='container'>
+  <view class="page">
+    <view class="page-head">
+      <view class="page-head-title">
+        <image class='logoImg' mode='aspectFit' src="/image/logo.jpg"></image>
+      </view>
+      <view class="page-head-line"></view>
+      <view class="page-head-title text">九商资产</view>
+    </view>
+
+    <view class="page__bd">
+      <view class="weui-cells weui-cells_after-title">
+
+
+
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">
+            <view style="display: inline-block; vertical-align: middle"> 版本号</view>
+
+          </view>
+          <view class="weui-cell__ft"> 1.1.2</view>
+        </view>
+
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">
+            <view style="display: inline-block; vertical-align: middle">开发人员</view>
+
+          </view>
+          <view class="weui-cell__ft" bindtap='phone'> 刘文生 徐岩</view>
+        </view>
+
+
+
+
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">
+            <view style="display: inline-block; vertical-align: middle"> 投诉建议</view>
+
+          </view>
+
+          <view class="weui-cell__ft "> </view>
+          <view>
+            <contact-button class='btn' size="5"   session-from="weapp"></contact-button>
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+
+
+
+    <view class="weui-footer weui-footer_fixed-bottom">
+      <view class="weui-footer__links">
+        <navigator url="" class="weui-footer__link">鱼熊企业管理咨询</navigator>
+      </view>
+      <view class="weui-footer__text">Copyright © 2018-2026 fishbear.com.cn</view>
+    </view>
+
+
+  </view>
+</view>

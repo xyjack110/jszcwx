@@ -1,0 +1,192 @@
+<!--eqpt/createEqptInfo/createEqptInfo.wxml-->
+
+<wxs module="m1">
+  var inStr = function(KeyList) {
+
+
+    return KeyList.length;
+  }
+
+  module.exports.inStr = inStr;
+</wxs>
+<view class="page-body">
+  <view class="page-section" >
+    <view class='wx-mask' wx-if="{{deleteShow}}" ></view>
+
+    <view class="weui-cells weui-cells_after-title " >
+    <view class="weui-cell weui-cell_input " >
+        <view class="weui-cell__hd">
+          <view class="weui-label">资产类别</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="weui-input">{{ eqptInfo.fEqptType?eqptInfo.fEqptType:array[index]}}</view>
+
+          </picker>
+
+        </view>
+      </view>
+
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">规格名称
+            <text class="mustInput">*</text>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="body-view">
+            <input placeholder='请输入名称' bindinput="fEqptSizeChange" value="{{eqptInfo.fEqptSize}}" ></input>
+          </view>
+        </view>
+      </view> 
+
+  <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">资产编码
+            <text class="mustInput">*</text> </view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="body-view" wx:if="{{CodeArr[0].fEqptCode}}">
+            <input placeholder='请输入编码' bindinput="fEqptCodeChange" value="{{CodeArr[0].fEqptCode}}" disabled="{{SN}}"></input>
+          </view>
+     <view class="body-view" wx:if="{{!CodeArr[0].fEqptCode}}">
+            <input placeholder='请输入编码' bindinput="fEqptCodeChange" value="{{fEqptCode}}" ></input>
+          </view>
+    
+        </view>   
+
+        <view class="weui-cell__ft">
+          <image class="iconInBlock" src="/image/sn.png" bindtap='getSnCode'></image>
+        
+        </view>
+      </view>
+
+
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">供应商</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="body-view">
+            <input placeholder='请输入资产厂家' bindinput="fProducerChange" value="{{eqptInfo.fProducer}}"></input>
+          </view>
+        </view>
+      </view>
+
+
+
+
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">启用日期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{eqptInfo.fEqptDate}}" bindchange="bindDateChange">
+            <view class="weui-input">{{eqptInfo.fEqptDate}}</view>
+          </picker>
+        </view>
+      </view>
+
+    <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">财务价值
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="body-view">
+            <input placeholder='请输入金额' bindinput="fFinancialChange" placeholder="0" type="digit" value="{{eqptInfo.fFinancial}}"></input>
+          </view>
+        </view>
+      </view>
+
+
+
+    </view> 
+
+
+
+
+
+
+
+
+    <view class="weui-cells">
+      <textarea class="remarkText" placeholder="资产描述" bindinput="fEqptDescChange" value="{{eqptInfo.fEqptDesc}}"></textarea>
+    </view>
+
+
+
+
+
+
+
+
+
+
+    <!-- 引用组件的模板 -->
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <!--id="uploader1" 通过ID获取组件传过来的值 -->
+          <!-- fileList="{{KeyList}}"指选中图片地址的List。默认值为 空 subPath="eqptImg"指定上传的文件夹。 默认值为 fishbear。 title="相关图片"设置标题。默认值为： 相关图片 edit='{{true}}'指是否为可编辑还是预览。 默认值为 false。 maxCount="{{5}}" 上传最大数量 默认值为 9-->
+          <uploader id="uploader1" fileList="{{imgList?imgList:[]}}" subPath="eqptImg" title="相关图片" edit='{{true}}' maxCount="{{9}}"></uploader>
+        </view>
+      </view>
+    </view>
+
+
+
+
+    <view class="weui-cells weui-cells_after-title" wx:if="{{!eqptInfo.fEqpID}}">
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">生成数量</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="body-view">
+            <input placeholder='1' bindinput="fEqptNumChange" type='number' value='{{eqptInfo.fEqptNum}}'disabled="{{SN}}"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+
+ <block wx:for="{{checkItems}}" wx:key="{{item.fEqptCode}}">
+
+    <!-- <navigator url="" class="weui-media-box weui-media-box_appmsg " >
+  <view>{{item.fEqptCode}}</view>
+ 
+        </navigator> -->
+
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">资产编码
+            <text class="mustInput">*</text> </view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="body-view">
+            {{item.fEqptCode}}
+          </view>
+        </view>   
+
+        <view class="weui-cell__ft">
+          <image class="iconInBlock" src="/image/delete.png" bindtap='delete' data-index="{{index}}"></image>
+        
+        </view>
+      </view>
+
+      </block>
+
+
+
+ <view class="SureBtn delIcon" >
+      <button type="primary" wx:if="{{!printFlag}}" bindtap='Save'> 确定</button> 
+       <button type="primary" wx:if="{{printFlag}}" bindtap='print'> {{printName}}</button>
+    </view>
+
+   
+
+
+
+  </view>
+</view>

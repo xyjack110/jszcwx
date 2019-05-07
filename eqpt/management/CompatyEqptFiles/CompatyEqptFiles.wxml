@@ -1,0 +1,185 @@
+<!--eqpt/management/CompatyEqptFiles/CompatyEqptFiles.wxml-->
+<!-- <view class="{{editStatus?'bottomUp':''}}">
+
+
+          <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+  <view class="weui-panel weui-panel_access">
+
+    <view class="weui-panel__bd">
+
+   
+
+
+
+      <checkbox-group bindchange="checkboxChange">
+        <block wx:for="{{CompanyEqptFiles}}" wx:key="{{item.fId.value}}">
+
+          <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap='checkPersonalDetail' bindtap='companyEqptFilesDetail' id="{{item.fEqpID.value}}" bindlongpress='editSelect'>
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{item.fEqpImg1}}" mode="aspectFill" />
+            </view>
+
+
+
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+             <view>
+              <view class="cText">
+                <view class="weui-media-box__title c1Text"> {{item.fEqpNum.value}}/{{item.fEqpSize.value}} </view>
+                <view class="c2Text {{item.fEqpStatus.value=='运行正常'?'greenText':'yellowText'}}"> {{item.fEqpStatus.value}}</view>
+
+
+              </view>
+              <view class="weui-media-box__desc">
+                <view class="cText">
+             
+                           <view class="c1Text" >{{item.fDeptName}}</view>
+                                                
+                </view>
+              </view>
+    
+            </view>
+
+</view>
+
+
+
+    <view class="weui-media-box__ft" wx:if="{{editStatus}}">
+                <checkbox class='check' value="{{item.fEqpID.value}}" />
+              </view>
+
+
+          </view>
+
+
+
+
+
+        </block>
+      </checkbox-group>
+    </view>
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+  <view class="weui-loadmore " hidden="{{!isLoading && editStatus}} ">
+    <view class="weui-loading "></view>
+    <view class="weui-loadmore_tips ">上拉加载更多</view>
+  </view>
+
+
+
+
+
+  <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading && editStatus}}">
+    <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+  </view>
+
+
+</view>
+<view class='address-add1' wx:if="{{!editStatus}}" bindtap='editSelect'>
+  <image class='editImg' src="/image/edit.png" mode="aspectFill"></image>
+</view>
+
+<button type='primary' class="address-add" wx:if="{{editStatus}}" bindtap='relateAction'>相关操作</button> -->
+
+
+
+<view class="{{editStatus?'bottomUp':''}}">
+
+
+  <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+  <view class="weui-panel weui-panel_access">
+
+    <view class="weui-panel__bd">
+
+
+
+
+      <checkbox-group bindchange="checkboxChange">
+
+        <block wx:for="{{CompanyEqptFiles}}" wx:key="{{item.fId.value}}">
+
+          <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap='checkPersonalDetail' bindtap='companyEqptFilesDetail' id="{{item.fEqpID.value}}" bindlongpress='editSelect'>
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{item.fEqpImg1}}" mode="aspectFill" />
+            </view>
+
+
+
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view>
+                <view class="cText">
+                  <view class="weui-media-box__title c1Text"> {{item.fEqpNum.value}}/{{item.fEqpSize.value}} </view>
+                  <view class="c2Text {{item.fEqpStatus.value=='运行正常'?'greenText':'yellowText'}}"> {{item.fEqpStatus.value}}</view>
+
+
+                </view>
+                <view class="weui-media-box__desc">
+                  <view class="cText">
+                    <!-- <view class="weui-media-box__title  c3Text">{{item.fPsnName.value}}</view>
+
+                <view class="c4Text">{{item.fDeptFName.value}}</view> -->
+                    <view class="c1Text">{{item.fName.value}}</view>
+
+                  </view>
+                </view>
+                <!-- <view class="weui-media-box__desc">{{item.fEqpDesc.value}}</view> -->
+              </view>
+
+            </view>
+
+
+<view class="weui-media-box__ft" wx:if="{{editStatus}}">
+                <checkbox class='check' value="{{item.fEqpID.value}}" />
+              </view>
+
+
+          </view>
+
+
+
+
+
+        </block>
+      </checkbox-group>
+    </view>
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+  <view class="weui-loadmore " hidden="{{!isLoading && editStatus}} ">
+    <view class="weui-loading "></view>
+    <view class="weui-loadmore_tips ">上拉加载更多</view>
+  </view>
+
+
+
+
+
+  <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading && editStatus}}">
+    <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+  </view>
+
+
+</view>
+<view class='address-add1'  bindtap='downLoadEqptList'>
+  <image class='editImg' src="/image/edit.png" mode="aspectFill"></image>
+</view>

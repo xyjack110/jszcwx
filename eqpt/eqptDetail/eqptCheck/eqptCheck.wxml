@@ -1,0 +1,82 @@
+<!--eqpt/eqptDetail/eqptCheck/eqptCheck.wxml-->
+<view class="page-body">
+  <view class="page-section">
+
+    <view class="imgEqptView">
+      <image class="imgEqpt" src="{{eqptCheck.EqpImg}}" mode="aspectFill"></image>
+    </view>
+
+
+
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label ">点检盘点</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="weui-input">{{array[index]}}</view>
+          </picker>
+        </view>
+        <view class="weui-cell__ft">
+          <image wx:if="{{!fOperationPosition}}" src="/image/position.png" class="positionImg" bindtap='openPosition'></image>
+          <image wx:if="{{fOperationPosition}}" src="/image/positionOK.png" class="positionImg" bindtap='openPosition'></image>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="weui-cells" wx:if="{{remarkOrImg}}">
+      <textarea class="remarkText" placeholder="点检盘点备注" bindinput="fCheckRemark"></textarea>
+    </view>
+
+
+
+
+
+
+
+
+    <!-- 引用组件的模板 -->
+    <view class="weui-cells" wx:if="{{remarkOrImg}}">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <!--id="uploader1" 通过ID获取组件传过来的值 -->
+          <!-- fileList="{{KeyList}}"指选中图片地址的List。默认值为 空 subPath="eqptImg"指定上传的文件夹。 默认值为 fishbear。 title="相关图片"设置标题。默认值为： 相关图片 edit='{{true}}'指是否为可编辑还是预览。 默认值为 false。 maxCount="{{5}}" 上传最大数量 默认值为 9-->
+          <uploader id="uploader1" fileList="{{KeyList}}" subPath="RepairInfoImg" title="故障图片" edit='{{true}}' maxCount="{{9}}"></uploader>
+        </view>
+      </view>
+    </view>
+
+
+
+
+    <view class="page-body">
+      <view class="page-section">
+
+        <block wx:for="{{checkItems}}" wx:key="{{item.itemName}}">
+          <view class="weui-cells__title">{{item.itemName}}</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+
+              <picker data-index="{{index}}" range="{{item.itemOptionsArr}}" class='pick' bindchange="bindCheckChange" wx:if="{{item.itemType!='数字'}}">
+                <view class="weui-input">{{item.userSelected}}</view>
+              </picker>
+
+              <view class="weui-cell__bd" wx:if="{{item.itemType=='数字'}}">
+                <view class="body-view">
+                  <slider data-index="{{index}}" class="slide" value="{{item.userSelected}}" max="{{item.itemMax}}" min="{{item.itemMin}}" bindchange="sliderCagnge" show-value />
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="SureBtn">
+      <button type="primary" bindtap='saveCheckBtn'> 提交</button>
+    </view>
+  </view>
+</view>

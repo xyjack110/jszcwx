@@ -1,0 +1,30 @@
+/* eqpt/mine/personalDetail/updateDeptName/updateDeptName.wxss */
+
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.lineGap{
+  margin: 50rpx 0;
+    padding: 20rpx 30rpx;
+}
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+.imgEqpt{
+    width: 160rpx;
+  height: 160rpx;
+}
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.remark{
+  margin: -15rpx 0 50rpx;
+    text-align: center;
+   color: #999999;
+ font-size:29rpx;
+}

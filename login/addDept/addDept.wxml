@@ -1,0 +1,40 @@
+
+<view class="page">
+  <view class="weui-toptips weui-toptips_warn " wx:if="{{showTopTips}}">{{ErrorMsg}}</view>
+  <view class="weui-msg">
+    <view class="weui-msg__icon-area">
+      <icon type="info" size="93"></icon>
+    </view>
+  <view class="weui-msg__title"></view>
+      <view class="weui-cells ">
+        <view class="weui-cell weui-cell_input">
+   <view class="weui-cell__hd">
+          <view class="weui-label">部门名称</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" maxlength="10" placeholder="长度不能超过5个字" value='{{fCmpyName}}' bindinput="fInputChange" focus="true"/>
+        </view>
+        </view>
+      </view>
+
+    <view class="weui-msg__text-area">
+
+
+    </view>
+    <view class="weui-msg__opr-area">
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap='okBtn'>创建部门</button>
+
+      </view>
+    </view>
+    <view class="weui-msg__extra-area">
+      <view class="weui-footer">
+        <view class="weui-footer__links">
+          <navigator url="" class="weui-footer__link">鱼熊企管咨询</navigator>
+        </view>
+        <view class="weui-footer__text">Copyright © 2008-2028 fishbear.com.cn</view>
+      </view>
+    </view>
+  </view>
+</view>
+

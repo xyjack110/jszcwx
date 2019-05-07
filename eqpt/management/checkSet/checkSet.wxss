@@ -1,0 +1,47 @@
+/* eqpt/management/checkSet/checkSet.wxss */
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.lineGap{
+  margin: 5rpx 0;
+    padding: 20rpx 30rpx;
+
+}
+.remarkText{
+margin-right: 30rpx;
+ font-size:30rpx;
+    color: #999999;
+}
+.textInBlock{
+
+  margin: 0 20rpx;
+   flex: 1;
+}
+.navigator-arrow {
+  padding-right: 26rpx;
+  position: relative;
+}
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 28rpx;
+}
+.weui-cell_active {
+  background-color: #ECECEC;
+}

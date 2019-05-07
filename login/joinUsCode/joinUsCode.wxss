@@ -1,0 +1,12 @@
+/* login/joinUsCode/joinUsCode.wxss */
+
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+.txt{
+  text-align:left;
+margin-left:120rpx;
+
+}

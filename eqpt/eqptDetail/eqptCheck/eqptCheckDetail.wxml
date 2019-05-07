@@ -1,0 +1,135 @@
+<!--eqpt/eqptDetail/eqptCheck/eqptCheckDetail.wxml-->
+<wxs module="m1">
+  var getFirstImgFromList = function(ImgList) {
+
+    if (ImgList == undefined) {
+      return "/image/eqpt.png";
+    }
+    if (ImgList == "") {
+      return "/image/eqpt.png"
+    } else {
+      var fEqpImgArr = ImgList.split("@")
+      return fEqpImgArr[0]
+    }
+
+
+  }
+  var toJson = function(str) {
+    return JSON.parse(str)
+  }
+
+  module.exports.getFirstImgFromList = getFirstImgFromList;
+  module.exports.toJson = toJson;
+</wxs>
+
+
+
+
+
+<view class="container">
+  <view class="page-body">
+    <view class="whiteBlock smallGap">
+      <image class="imgInBlock" src="{{m1.getFirstImgFromList(eqptCheckDetail.fEqpImg.value)}}" mode="aspectFill"></image>
+
+
+      <view class="textInBlock">
+
+        <view>{{eqptCheckDetail.fEqpNum.value}} </view>
+
+        <view class='cText'>
+          <view class="c1Text">{{eqptCheckDetail.fEqpType.value}}</view>
+          <view class="c2Text">{{eqptCheckDetail.fEqpSize.value}}</view>
+        </view>
+      </view>
+
+
+    </view>
+
+
+
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        点检人
+      </view>
+      <view class="textInBlock">{{eqptCheckDetail.fPsnName.value}}</view>
+      <view wx:if='{{eqptCheckDetail.fCellphone.value}}'>
+        <image src="/image/phone.png" class="phoneImg" bindtap='call'></image>
+      </view>
+    </view>
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        点检状态
+      </view>
+      <view class="textInBlock">{{eqptCheckDetail.fEqptStatus.value}}</view>
+    </view>
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        点检时间
+      </view>
+      <view class="textInBlock"> {{eqptCheckDetail.fdate}}</view>
+
+    </view>
+
+    <view class="whiteBlock lineGap" wx:if="{{eqptCheckDetail.fOperationPosition.value?m1.toJson(eqptCheckDetail.fOperationPosition.value).name:''}}">
+
+      <view class="remarkText">
+        点检地址
+      </view>
+      <view class="textInBlock">{{eqptCheckDetail.fOperationPosition.value?m1.toJson(eqptCheckDetail.fOperationPosition.value).name:''}}</view>
+
+      <view>
+
+        <image src="/image/positionOK.png" class="positionImg" bindtap='openPosition'></image>
+      </view>
+    </view>
+
+
+
+
+    <view class="weui-cells" wx:if="{{repairInfo.fOperationDesc.value}}">
+      <view class="textarea textRemark"> {{repairInfo.fOperationDesc.value}} </view>
+    </view>
+
+    <!-- 引用组件的模板 -->
+    <view class="weui-cells" wx:if="{{imgList[0]}}">
+      <view class="weui-cell">
+
+        <!--id="uploader1" 通过ID获取组件传过来的值 -->
+        <!-- fileList="{{KeyList}}"指选中图片地址的List。默认值为 空 subPath="eqptImg"指定上传的文件夹。 默认值为 fishbear。 title="相关图片"设置标题。默认值为： 相关图片 edit='{{true}}'指是否为可编辑还是预览。 默认值为 false。 maxCount="{{5}}" 上传最大数量 默认值为 9-->
+        <uploader id="uploader" fileList="{{imgList?imgList:[]}}" title="点检图片" edit='{{false}}'></uploader>
+
+      </view>
+    </view>
+
+
+    <block wx:for="{{fOperationJson}}" wx:key="{{item.itemName}}">
+      <view class="weui-cells__title">{{item.itemName}}</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+
+
+          <view class="weui-input">{{item.userSelected}}</view>
+
+
+          <!-- <view class="weui-cell__bd" wx:if="{{item.itemType=='数字'}}">
+            <view class="body-view">
+              <view class="weui-input">{{item.userSelected}}</view>
+            </view>
+          </view> -->
+        </view>
+      </view>
+    </block>
+
+
+
+
+
+  </view>
+</view>

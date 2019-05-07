@@ -1,0 +1,9 @@
+{
+
+"usingComponents": {
+  "uploader": "/fishbearComponents/uploader/uploader"
+},
+"navigationBarTitleText": "创建资产维修单"
+
+
+}

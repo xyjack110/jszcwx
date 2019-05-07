@@ -1,0 +1,74 @@
+/* eqpt/mine/personalDetail/myleve.wxss */
+
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.iconInBlock{
+    width: 90rpx;
+  height: 90rpx;
+
+
+  
+}
+
+.img{
+flex:1;
+  margin-right: 30rpx;
+  text-align: right
+}
+.bigGap{
+    margin: 20rpx 0;
+      padding: 30rpx;
+}
+
+.lineGap{
+  margin: 5rpx 0;
+    padding: 20rpx 30rpx;
+}
+.textInBlock{
+   color: #999999;
+  margin: 0 20rpx;
+  width: 200rpx;
+}
+.remarkText{
+margin-right: 30rpx;
+ font-size:30rpx;
+    flex: 1;
+    text-align: right
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx
+}
+.navigator-arrow {
+  padding-right: 26rpx;
+  position: relative;
+}
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 28rpx;
+}
+.cText{
+  font-size: 30rpx;
+     color: #999999;
+}
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+.weui-cell_active {
+  background-color: #ECECEC;
+}

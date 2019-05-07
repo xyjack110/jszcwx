@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uploader": "/fishbearComponents/uploader/uploader"
+  },
+  "navigationBarTitleText": "资产领用详细"
+}

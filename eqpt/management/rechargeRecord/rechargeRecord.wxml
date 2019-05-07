@@ -1,0 +1,43 @@
+<!--eqpt/management/rechargeRecord/rechargeRecord.wxml-->
+<view>
+  <view class="weui-panel weui-panel_access ">
+
+    <view class="weui-panel__bd">
+      <navigator url="" class="weui-media-box weui-media-box_appmsg ">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view>
+            <view class="cText">
+              <view class="weui-media-box__title c1Text">张三 充值:60元</view>
+              <view class="c2Text">2018-10-18</view>
+            </view>
+            <view class="weui-media-box__desc"> 计费价格1.00元/人/天。额定人员由10人增至30人，额定日期由2018-03-23 延至 2018-10-14</view>
+          </view>
+
+        </view>
+      </navigator>
+      <navigator url="" class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view>
+            <view class="cText">
+              <view class="weui-media-box__title c1Text">李四  充值:60元</view>
+              <view class="c2Text">2018-10-18</view>
+            </view>
+
+            <view class="weui-media-box__desc">计费价格1.00元/人/天。额定人员由10人增至30人，额定日期由2018-03-23 延至 2018-10-14</view>
+          </view>
+
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+
+
+</view>

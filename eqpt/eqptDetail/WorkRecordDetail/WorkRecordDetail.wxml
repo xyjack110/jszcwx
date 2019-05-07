@@ -1,0 +1,133 @@
+<!--eqpt/eqptDetail/WorkRecordDetail/WorkRecordDetail.wxml-->
+
+<wxs module="m1">
+  var getFirstImgFromList = function(ImgList) {
+
+    if (ImgList == undefined) {
+      return "/image/eqpt.png";
+    }
+    if (ImgList == "") {
+      return "/image/eqpt.png"
+    } else {
+      var fEqpImgArr = ImgList.split("@")
+      return fEqpImgArr[0]
+    }
+
+
+  }
+  var toJson = function(str) {
+    return JSON.parse(str)
+  }
+
+  module.exports.getFirstImgFromList = getFirstImgFromList;
+  module.exports.toJson = toJson;
+</wxs>
+
+
+
+
+
+<view class="container">
+  <view class="page-body">
+
+    <view class="weui-media-box weui-media-box_appmsg whiteBlock">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+
+        <image class="weui-media-box__thumb  imgInBlock" src="{{m1.getFirstImgFromList(workRecordDetail.fEqpImg.value)}}" mode="aspectFill"></image>
+      </view>
+
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view>
+          <view class='weui-media-box__title'>{{workRecordDetail.fEqpNum.value}} </view>
+          <view class="cText">
+
+            <view class=" c1Text">{{workRecordDetail.fEqpType.value}}</view>
+            <view class="weui-media-box__title c3Text">{{workRecordDetail.fEqpSize.value}}</view>
+
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        录入人
+      </view>
+      <view class="textInBlock">{{workRecordDetail.fPsnName.value}}</view>
+      <view>
+        <image wx:if='{{repairDetail.fCellphone.value}}' src="/image/phone.png" class="phoneImg" bindtap='call'></image>
+      </view>
+    </view>
+
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        录入时间
+      </view>
+      <view class="textInBlock"> {{workRecordDetail.fdate}}</view>
+
+    </view>
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        工作量
+      </view>
+      <view class="textInBlock"> {{workRecordDetail.fProdCount.value}} {{  workRecordDetail.fProdMin.value}}</view>
+
+    </view>
+
+        <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        工作时长
+      </view>
+      <view class="textInBlock"> {{workRecordDetail.version.value}} 分钟</view>
+
+    </view>
+
+    <view class="whiteBlock lineGap" wx:if="{{repairDetail.fOperationPosition.value}}">
+
+      <view class="remarkText">
+        录入地址
+      </view>
+      <view class="textInBlock">{{workRecordDetail.fOperationPosition.value?m1.toJson(workRecordDetail.fOperationPosition.value).name:""}}</view>
+
+      <view>
+
+        <image src="/image/positionOK.png" class="positionImg" bindtap='openPosition'></image>
+      </view>
+    </view>
+
+
+
+
+
+    <view class="weui-cells">
+      <view class="textarea textRemark"> {{workRecordDetail.fOperationDesc.value}} </view>
+    </view>
+
+    <!-- 引用组件的模板 -->
+    <view class="weui-cells " wx:if='{{imgList.length>0}}'>
+      <view class="weui-cell">
+
+        <!--id="uploader1" 通过ID获取组件传过来的值 -->
+        <!-- fileList="{{KeyList}}"指选中图片地址的List。默认值为 空 subPath="eqptImg"指定上传的文件夹。 默认值为 fishbear。 title="相关图片"设置标题。默认值为： 相关图片 edit='{{true}}'指是否为可编辑还是预览。 默认值为 false。 maxCount="{{5}}" 上传最大数量 默认值为 9-->
+        <uploader id="uploader1" fileList="{{imgList?imgList:[]}}" title="录入图片" edit='{{false}}'></uploader>
+
+      </view>
+    </view>
+
+
+
+
+  </view>
+</view>

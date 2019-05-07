@@ -1,0 +1,15 @@
+/* eqpt/management/employeesUseEqptRecord/employeesUseEqptRecord.wxss */
+
+.samllGap{
+margin: 10rpx 0 10rpx;
+  
+}
+.bigGap{
+  margin: 20rpx 0 0rpx;
+}
+.imgEqpt{
+    width: 800rpx;
+  height: 800rpx;
+
+
+}

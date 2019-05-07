@@ -1,0 +1,67 @@
+/* eqpt/management/orgPerson/orgPerson.wxss */
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgInBlock{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.smallGap{
+
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.cText{
+  display: flex;
+}
+.c1Text{
+    width: 150rpx;
+
+}
+.c2Text{
+  text-align: right;
+ flex:1;
+ color: #999999;
+ font-size:25rpx;
+}
+.c3Text{
+flex:1;
+ color: #999999;
+ font-size:25rpx;
+
+}
+.c4Text{
+  text-align: right;
+    width: 200rpx;
+ color: #999999;
+ font-size:25rpx;
+}
+.textInBlock{
+  margin: 15rpx 0 0 30rpx;
+   flex: 1;
+}
+.remarkText{
+    display: flex;
+
+ font-size:30rpx;
+
+}
+.weui-cell_active {
+  background-color: #ECECEC;
+}
+.greenText{
+
+  color:#3cc51f
+}
+.blackText{
+  color:#000000
+
+}
+
+
+
+

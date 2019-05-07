@@ -1,0 +1,47 @@
+<!--fishbearComponents/uploader/uploader.wxml-->
+<wxs module="m1">
+  var Count = function(KeyList) {
+
+
+    return KeyList.length;
+  }
+
+  module.exports.Count = Count;
+</wxs>
+
+
+ <view class="weui-uploader">
+
+             <view class='wx-mask' wx-if="{{deleteShow}}" bindtap='_clearDelete'></view>
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">{{title}}</view>
+              <view class="weui-uploader__info" wx-if="{{edit}}">{{fileList.length}}/{{maxCount}}</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files">
+                <block wx:for="{{fileList}}" wx:for-item="image" wx:key="*this">
+                  <view class="weui-uploader__file" style="position: relative;margin-right: 10px;">
+                    <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="_previewImage" mode='aspectFill'></image>
+
+
+                    <icon type="clear" size="23" color="#F43530" style="position: absolute;top: 0.5rpx;right: -4rpx;padding:.1em .4em .4em;" bindtap="_deleteObject" data-index="{{index}}" data-src="{{image}}" wx-if="{{deleteShow}}" class="delIcon"></icon>
+
+                  </view>
+                </block>
+              </view>
+
+              <view class="weui-uploader__file aa" bindtap="_simpleUpload" wx-if="{{ (m1.Count(fileList)< maxCount  )&& !deleteShow && edit }}" >
+                <image class="delImg " src="/image/add1.png " mode="aspectFill " />
+              </view>
+
+
+        
+
+              <view class="weui-uploader__file aa" bindtap="_deletImg" wx-if="{{m1.Count(fileList)>0 && !deleteShow && edit}}">
+                <image class="delImg " src="/image/delte.png " mode="aspectFill" />
+              </view>
+
+
+
+            </view>
+          </view>

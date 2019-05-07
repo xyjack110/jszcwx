@@ -1,0 +1,23 @@
+/* login/changePost/changePost.wxss */
+.cText{
+  display: flex;
+}
+.c1Text{
+ flex:1;
+ font-size: 24rpx;
+} 
+.c4Text{
+
+
+font-size: 24rpx;
+}
+.address-add{
+  width:90%;
+  position:fixed;
+  bottom: 0;
+ border-radius:0rpx;
+ margin-bottom: 0;
+margin-left:5%;
+
+
+}

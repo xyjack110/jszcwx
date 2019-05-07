@@ -1,0 +1,144 @@
+<!--eqpt/management/management.wxml-->
+
+<view>
+  <view class="whiteBlock smallGap" hover-class="weui-cell_active" bindtap='orgPerson' hidden='true'>
+    <image class="imgInBlock" src="/image/org.png" mode='aspectFit'></image>
+    <view class="textInBlock">
+      <view>查看公司组织机构</view>
+      <!-- <view class="remarkText">鱼熊企管咨询</view> -->
+    </view>
+    <view>{{compPsnNum}}人</view>
+    <view bindtap='companySet'>
+      <image src="/image/money.png" class='setImg' hidden='true'></image>
+    </view>
+  </view>
+  <view wx:if='{{displayEqpt}}'>
+    <view class='titleText'>资产管理</view>
+    <view class="whiteBlock bigGap" bindtap='CompatyEqptFiles' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/eqptDoc.png"></image>
+      <view class="textInBlock">
+        公司资产列表
+      </view>
+      <view>{{compEqptNum}}台</view>
+    </view>
+
+    <view class="whiteBlock lineGap" bindtap='EqptIntoFiles' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/eqptDoc.png"></image>
+      <view class="textInBlock">
+        资产采购入库统计表
+      </view>
+      <view>{{intoEqptNum}}台</view>
+    </view>
+
+        <view class="whiteBlock lineGap" bindtap='ScrapFiles' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/eqptDoc.png"></image>
+      <view class="textInBlock">
+        资产报废统计表
+      </view>
+      <view>{{ScrapEqptNum}}台</view>
+    </view>
+
+
+    <!-- <view class="whiteBlock lineGap" bindtap='compatyEqptReport' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/a.png"></image>
+      <view class="textInBlock">
+        公司资产报表
+
+      </view>
+
+    </view> -->
+
+
+
+    <!-- <view class="whiteBlock lineGap" bindtap='workRecordList' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/workRecordList.png"></image>
+      <view class="textInBlock">
+        我们的工作录入报表
+
+      </view>
+
+    </view> -->
+
+    <view class="whiteBlock lineGap" bindtap='employeesUseEqptRecord' hidden='true' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/personUseExcel.png"></image>
+      <view class="textInBlock">
+        员工报修报表
+
+      </view>
+
+    </view>
+    <view class="whiteBlock lineGap" bindtap='employeesRepairEqptRecord' hidden='true' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/repair.png"></image>
+      <view class="textInBlock">
+        员工维修报表
+
+      </view>
+
+
+    </view>
+    <view class="whiteBlock lineGap" bindtap='checkSet' hover-class="weui-cell_active" hidden='{{false}}'>
+      <image class="iconInBlock" src="/image/check.png"></image>
+      <view class="textInBlock">
+        资产点检设置
+
+      </view>
+
+    </view>
+
+
+    <view class="whiteBlock lineGap" bindtap='checkList' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/inventory.png"></image>
+      <view class="textInBlock">
+        资产盘点
+
+      </view>
+
+
+    </view>
+
+    <view class="whiteBlock lineGap" bindtap='DownLoadEqptOprationRecord' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/EqptRecord.png"></image>
+      <view class="textInBlock">
+        下载资产操作记录
+
+      </view>
+
+
+    </view>
+  </view>
+  <!-- <view wx:if='{{displayPsn}}'>
+    <view class='titleText'>人员管理</view>
+
+    <view class="whiteBlock bigGap" bindtap='eqptUseReport' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/c.png"></image>
+      <view class="textInBlock">
+        资产停机报表
+
+      </view>
+
+
+    </view>
+
+
+
+    <view class="whiteBlock smallGap" bindtap='eqptRepairReport' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/repair1.png"></image>
+      <view class="textInBlock">
+        维修响应报表
+
+      </view>
+
+
+    </view>
+
+    <view class="whiteBlock smallGap" bindtap='DownLoadPsnOprationRecord' hover-class="weui-cell_active">
+      <image class="iconInBlock" src="/image/download1.png"></image>
+      <view class="textInBlock">
+        下载人员操作记录
+
+      </view>
+
+
+    </view>
+  </view> -->
+</view>

@@ -1,0 +1,15 @@
+<!--eqpt/mine/MsgTest.wxml-->
+
+
+<view class="container">
+
+  <form class="page-body" bindsubmit="submitForm" report-submit="true">
+    
+  
+      <button type="primary" size="40" formType="submit" loading="{{loading}}">点我提交</button>
+
+  </form>
+
+
+</view>
+

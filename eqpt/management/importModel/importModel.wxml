@@ -1,0 +1,79 @@
+<!--eqpt/management/importModel/importModel.wxml-->
+<view>
+  <view class="whiteBlock smallGap" hover-class="weui-cell_active" hidden="true">
+    <image class="imgInBlock" src="/image/download1.png" mode='aspectFit' bindtap='orgPerson'></image>
+    <view class="textInBlock" bindtap='importEqptModelExcel'>
+      <view>下载批量导入模板</view>
+      <!-- <view class="remarkText">鱼熊企管咨询</view> -->
+    </view>
+    <view bindtap='companySet'>
+      <image src="/image/money.png" class='setImg' hidden='true'></image>
+    </view>
+  </view>
+
+
+
+  <view class="whiteBlock smallGap" hover-class="weui-cell_active" hidden="true">
+    <image class="imgInBlock" src="/image/close.png" mode='aspectFit'></image>
+    <view class="textInBlock" bindtap='openClose'>
+      <view>关闭与开启</view>
+      <!-- <view class="remarkText">鱼熊企管咨询</view> -->
+    </view>
+
+  </view>
+
+
+
+  <view class="whiteBlock smallGap" hover-class="weui-cell_active" wx:if="{{TransferAuth}}">
+    <image class="imgInBlock" src="/image/Transfer.png" mode='aspectFit'></image>
+    <view class="textInBlock" bindtap='transferManagerAuth'>
+      <view>管理员移交</view>
+    
+    </view>
+
+  </view>
+
+
+  <view class="whiteBlock smallGap" hover-class="weui-cell_active" wx:if="{{updateCmpyName}}">
+    <image class="imgInBlock" src="/image/updateName.png" mode='aspectFit'></image>
+    <view class="textInBlock" bindtap='updateCmpyName'>
+      <view>公司改名</view>
+
+    </view>
+
+  </view>
+
+
+  <view class="whiteBlock lineGap" bindtap='Pay' hover-class="weui-cell_active" wx:if="{{fExpireDate}}">
+    <image class="imgInBlock" src="/image/pay.png"></image>
+    <view class="textInBlock">
+      服务费支付
+
+    </view>
+
+    <view class="remarkText">
+
+      <text>{{fExpireDate}} 到期</text>
+    </view>
+
+  </view>
+
+
+  <view class="whiteBlock smallGap" hover-class="weui-cell_active">
+    <image class="imgInBlock" src="/image/aboutUs.png" mode='aspectFit' bindtap=''></image>
+    <view class="textInBlock" bindtap='aboutUs'>
+      <view>关于我们</view>
+      <!-- <view class="remarkText">鱼熊企管咨询</view> -->
+    </view>
+
+  </view>
+    <view class="whiteBlock smallGap" hover-class="weui-cell_active">
+    <image class="imgInBlock" src="/image/blueTooh.png" mode='aspectFit'></image>
+    <view class="textInBlock" bindtap='blueTooth'>
+      <view>蓝牙连接设置</view>
+      <!-- <view class="remarkText">鱼熊企管咨询</view> -->
+    </view>
+
+  </view>
+
+</view>

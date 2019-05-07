@@ -1,0 +1,66 @@
+<!--eqpt/mine/personalDetail/myleve.wxml-->
+<!--eqpt/mine/personalDetail/personalDetail.wxml-->
+<view>
+
+
+
+  <view class="whiteBlock bigGap">
+    <view class="textInBlock">
+      头像
+
+    </view>
+    <view class='img'>
+    <image class="iconInBlock" src="{{userInfo.fPsnImg}}" mode="aspectFill"></image>
+</view>
+
+  </view>
+
+
+
+  
+
+
+
+
+
+
+ 
+
+
+
+
+  <view class="whiteBlock lineGap" bindtap='querySamePsn'  hover-class="weui-cell_active">
+
+    <view class="textInBlock">
+    我的同级
+
+    </view>
+    <view class="remarkText">
+      <text>{{samePsnNum}}人</text>
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+
+
+
+  <view class="whiteBlock lineGap" bindtap='queryLowerLevelPsn' wx:if="{{LowerLevelPsnNum}}"  hover-class="weui-cell_active">
+
+    <view class="textInBlock">
+    我的下级
+
+    </view>
+    <view class="remarkText">
+      <text>{{LowerLevelPsnNum}}人</text>
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+
+  <view class="SureBtn">
+
+  </view>
+
+
+ 
+</view>

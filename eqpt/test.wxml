@@ -1,0 +1,4 @@
+<!--eqpt/test.wxml-->
+
+<button bindtap='test'>测试</button>
+<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" lang="zh_CN">登录</button>

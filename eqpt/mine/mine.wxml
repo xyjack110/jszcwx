@@ -1,0 +1,270 @@
+<!--eqpt/mine/mine.wxml-->
+
+<view class="container">
+  <view class="page-body">
+    <view class="whiteBlock smallGap" hover-class="weui-cell_active">
+      <image class="imgInBlock" src="{{userInfo.avatarUrl.value?userInfo.avatarUrl.value:'/image/notLogged.png'}}"></image>
+
+
+      <view class=" weui-media-box__bd weui-media-box__bd_in-appmsg textInBlock" bindtap='manageBtn'>
+        <view class='cText'>
+          <view class='weui-media-box__title'>{{userInfo.psnName.value?userInfo.psnName.value:'未登录'}} </view>
+          <view class='icon'>
+
+            <image class="orgBlock" src="/image/auth.png" wx:if="{{isAuth}}" mode="aspectFill"></image>
+          </view>
+        </view>
+        <view class="remarkText">{{orgInfo.fName.value?orgInfo.fName.value:'未加入任何部门'}}</view>
+
+      </view>
+
+      <button  bindtap="checkPersonalDetail" type="primary" plain="true" size="mini" loading="{{isLoading}}" disabled='{{isLoading}}'>组织机构</button>
+    </view>
+
+    <view class="scanCodeBtn">
+      <button type='primary' plain="true" style="width:90%" bindtap='scanBtn'>扫描九商资产二维码</button>
+    </view>
+
+    <view class="scanCodeBtn">
+      <button type='primary' plain="true" style="width:90%"  bindtap="createEqpt" wx:if="{{createEqpt}}" >资产入库 </button>
+   
+    </view>
+ 
+
+    <view class="bigGap">
+
+      <!-- <view class="whiteBlock lineGap" bindtap='createEqpt' wx:if="{{ openInfo.creatEqptInfo}}" hover-class="weui-cell_active">
+        <image class="iconInBlock" src="/image/eqptDoc.png"></image>
+       
+        <view class="textInBlock">
+          创建资产信息
+        </view>
+
+      </view> -->
+
+
+
+      <view class="whiteBlock lineGap" bindtap='mineEqpt' hover-class="weui-cell_active" wx:if='{{openInfo.EqptUse}}'>
+        <image class="iconInBlock" src="/image/personUseExcel.png"></image>
+        <view class="textInBlock">
+          我们使用的资产
+
+        </view>
+        <view class="remarkText">
+          <text class='redText' wx:if='{{eqptErrNum>0}}'>异常{{eqptErrNum}}   </text>
+          <text>共{{eqptNum}}个</text>
+        </view>
+
+      </view>
+
+      <!-- <view class="whiteBlock lineGap" bindtap='workRecord' hover-class="weui-cell_active" wx:if='{{openInfo.workRecord}}'>
+        <image class="iconInBlock" src="/image/workRecord.png"></image>
+        <view class="textInBlock">
+          我们的工作记录
+
+        </view>
+
+      </view> -->
+
+
+
+
+
+
+
+      <!-- <view class="whiteBlock lineGap" bindtap='mineRepairInfoRecord' hover-class="weui-cell_active" wx:if='{{openInfo.repairInfoRecord}}'>
+        <image class="iconInBlock" src="/image/alarm.png"></image>
+        <view class="textInBlock">
+          我们的报修记录
+
+        </view>
+        <view class="remarkText">
+          <text class='redText' wx:if='{{repairInfoNoCloseNum>0}}'>未关闭{{repairInfoNoCloseNum}}</text>
+          <text>本月共{{ repairInfoCountNum}}次</text>
+
+        </view>
+      </view>
+
+      <view class="whiteBlock lineGap" bindtap='mineEvalue' hover-class="weui-cell_active" wx:if='{{openInfo.evalue}}'>
+        <image class="iconInBlock" src="/image/evalue.png"></image>
+        <view class="textInBlock">
+          我们发出的评价
+
+        </view>
+        <view class="remarkText">
+          <text class='ColorText'>本月{{EvalueNum}}次</text>
+
+          <text>共{{ EvalueScore}}分</text>
+        </view>
+
+      </view> -->
+
+      <view class="whiteBlock lineGap" bindtap='checkList' hover-class="weui-cell_active" wx:if='{{openInfo.WaitCheckList}}'>
+        <image class="iconInBlock" src="/image/WaitCheckList.png"></image>
+        <view class="textInBlock">
+          待盘点清单
+
+        </view>
+
+
+      </view>
+
+
+      <view class="whiteBlock lineGap" bindtap='WeCheckRecord' hover-class="weui-cell_active" wx:if='{{openInfo.checkRecord}}'>
+        <image class="iconInBlock" src="/image/check1.png"></image>
+        <view class="textInBlock">
+          我们的点检/盘点记录
+
+        </view>
+      </view>
+
+      <view class="whiteBlock lineGap" bindtap='WeEqptUseRecord' hover-class="weui-cell_active" wx:if='{{openInfo.eqptUseRecord}}'>
+        <image class="iconInBlock" src="/image/useRecord.png"></image>
+        <view class="textInBlock">
+          我们的领用资产记录
+        </view>
+      </view>
+
+    </view>
+
+
+    <view>
+
+
+      <!-- <view class="whiteBlock lineGap" bindtap='mineRepairRecord' hover-class="weui-cell_active" wx:if='{{openInfo.repairRecord}}'>
+        <image class="iconInBlock" src="/image/repair1.png"></image>
+        <view class="textInBlock">
+          我们的维修记录
+
+        </view>
+        <view class="remarkText">
+          <text class='redText' wx:if='{{RepairInfoNoEvalueNum>0}}'>未评价{{RepairInfoNoEvalueNum}}</text>
+
+          <text>本月共{{ repairCountNum}}次</text>
+        </view>
+      </view> -->
+
+
+
+
+
+      <!-- <view class="whiteBlock lineGap" bindtap='mineReceiveEvalue' hover-class="weui-cell_active" wx:if='{{openInfo.receiveEvalue}}'>
+        <image class="iconInBlock" src="/image/receiveEvalue.png"></image>
+        <view class="textInBlock">
+          我们收到的评价
+
+        </view>
+        <view class="remarkText">
+          <text class='ColorText'>本月{{ReceiveEvalueNum}}次</text>
+
+          <text>共{{ ReceiveEvalueScore}}分</text>
+        </view>
+
+      </view> -->
+
+      <!-- <view class="whiteBlock lineGap" bindtap='mineRepairRecordNew' hover-class="weui-cell_active" wx:if='{{openInfo.repairNumRank}}'>
+        <image class="iconInBlock" src="/image/numRepair.png"></image>
+        <view class="textInBlock">
+          维修次数排行榜
+
+        </view>
+        <view class="remarkText">
+          <text class='ColorText'>本月共{{repairCountPsnNum}}名</text>
+        </view>
+
+      </view> -->
+
+
+
+      <!-- <view class="whiteBlock lineGap" bindtap='mineReceivedEvalue' hover-class="weui-cell_active" wx:if='{{openInfo.repairScore}}'>
+        <image class="iconInBlock" src="/image/scoreRanking.png"></image>
+        <view class="textInBlock">
+          维修评分排行榜
+
+        </view>
+        <view class="remarkText">
+          <text class='ColorText'>本月共{{repairCountScorePsnNum}}名</text>
+        </view>
+
+      </view> -->
+
+
+      <!-- <view class="whiteBlock lineGap" bindtap='repairInfoAvgTime' hover-class="weui-cell_active" wx:if='{{openInfo.repairAvgTime}}'>
+        <image class="iconInBlock" src="/image/c.png"></image>
+        <view class="textInBlock">
+          报修响应排行榜
+
+        </view>
+        <view class="remarkText">
+          <text class='ColorText'></text>
+        </view>
+
+      </view> -->
+    </view>
+
+
+
+
+    <view class="bigGap">
+
+
+      <!-- <view class="whiteBlock lineGap" bindtap='otherRecord' hover-class="weui-cell_active" wx:if='{{openInfo.other}}'>
+        <image class="iconInBlock" src="/image/other.png"></image>
+        <view class="textInBlock">
+          其他操作记录
+
+        </view>
+
+        <view class="remarkText">
+          <text class='ColorText'>本月共{{otherRecordNum}}次</text>
+        </view>
+      </view> -->
+
+      <view class="whiteBlock lineGap" hover-class="weui-cell_active">
+        <image class="iconInBlock" src="/image/data.png" mode='aspectFit'></image>
+        <view class="textInBlock" bindtap='traindingList'>
+          <view>培训资料</view>
+
+        </view>
+
+      </view>
+
+
+
+
+
+      <view class="whiteBlock lineGap" bindtap='set' hover-class="weui-cell_active">
+        <image class="iconInBlock" src="/image/set.png"></image>
+        <view class="textInBlock">
+          设置
+
+        </view>
+
+
+      </view> 
+
+   
+      <view class="whiteBlock lineGap" bindtap='MsgText' hover-class="weui-cell_active" hidden='true'>
+        <image class="iconInBlock" src="/image/set.png"></image>
+        <view class="textInBlock">
+          模板消息测试
+
+        </view>
+
+
+      </view>
+
+
+        <view class="whiteBlock lineGap" bindtap='Pay' hover-class="weui-cell_active" hidden='true'>
+    <image class="iconInBlock" src="/image/set.png"></image>
+    <view class="textInBlock">
+      支付
+
+    </view>
+
+
+  </view>
+
+    </view>
+  </view>
+</view>

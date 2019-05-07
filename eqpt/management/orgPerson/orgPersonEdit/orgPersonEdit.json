@@ -1,0 +1,6 @@
+{
+"usingComponents": {
+  "checkboxgroup": "/fishbearComponents/checkboxgroup/checkboxgroup"
+},
+"navigationBarTitleText": "权限管理"
+}

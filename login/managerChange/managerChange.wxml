@@ -1,0 +1,67 @@
+<!--login/managerChange/managerChange.wxml-->
+<!--login/joinUS/joinUS.wxml-->
+<view class="page">
+  <view class="weui-toptips weui-toptips_warn " wx:if="{{showTopTips}}">{{ErrorMsg}}</view>
+  <view class="weui-msg">
+    <view class="weui-msg__icon-area">
+ 
+      <image class="userinfo-avatar" src="{{params.imgsrc}}"></image>
+    </view>
+    <view class="weui-msg__text-area">
+
+
+            <view class="weui-msg__desc txt">
+  
+        <text>管理人员：{{params.managerName
+}}</text>
+        
+           
+      </view>
+            <view class="weui-msg__desc txt">
+ 
+          <text>失效时间：{{params.session
+}}</text>
+           
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+    <view class="weui-msg__opr-area">
+      <view class="weui-btn-area">
+  
+        <button class="weui-btn" type="default" open-type="share">转发邀请</button>
+      </view>
+    </view>
+
+
+   <view class="weui-cells weui-cells_after-title">
+       <block wx:for="{{sons}}" wx:key="{{item.fID.value}}">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd" style="text-align:left">{{item.fName.value}}</view>
+        <view class="weui-cell__ft " style="font-size: 0">
+            <button class="joinBtn" bindtap='addPsn' wx:if="{{dataAvilble}}" type="primary" plain="true" size="mini"  id="{{item.fID.value}}">同意加入</button>
+          <!-- <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
+          <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view> -->
+        </view>
+      </view>
+      </block>
+    </view>
+
+
+    <view class="weui-msg__extra-area">
+      <view class="weui-footer">
+        <view class="weui-footer__links">
+          <navigator url="" class="weui-footer__link">鱼熊企管咨询</navigator>
+        </view>
+        <view class="weui-footer__text">Copyright © 2008-2018 fishbear.com.cn</view>
+      </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,47 @@
+<!--login/psnAuth/psnAuth.wxml-->
+<wxs module="m1">
+var inStr = function(str,subStr) {
+
+
+  return str.indexOf(subStr);
+}
+
+module.exports.inStr = inStr;
+</wxs> 
+
+<view class="container">
+
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-body-info">
+        <view class="page-body-title">用户信息</view>
+      
+  
+          <image class="userinfo-avatar" src="{{params.avatarUrl}}"></image>
+          <text class="userinfo-nickname">{{params.fName}}</text>
+ 
+      </view>
+            <view class="weui-cells weui-cells_after-title">
+    <checkbox-group bindchange="checkboxChange">
+          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.value}}">
+            <view class="weui-cell__hd">
+              <checkbox value="{{item.value}}" checked="{{m1.inStr(params.fAuth,item.value)>-1}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </checkbox-group>
+        </view>
+    </view>
+ <view class="SureBtn" wx:if="{{BtnShow}}">
+    <button type="primary" bindtap='updataPsnAuthBtn'> 确定</button>
+ 
+  </view>
+  
+  </view>
+
+
+</view>
+
+
+

@@ -1,0 +1,39 @@
+.btn {
+  margin-top: 50rpx;
+  height: 40px;
+  width: 600rpx;
+  line-height:40px;
+}
+/* .item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+     height: 130rpx;
+     width: 100%;
+} */
+.item{
+  display: block;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size:14px;
+  margin: 0 30px;
+  margin-top:10px;
+  background-color:#FFA850; 
+  border-radius: 5px;
+  border-bottom: 2px solid #68BAEA;
+}
+.block{
+    display: block;
+    color:#ffffff;
+    padding: 5px;
+}/* pages/bleConnect/bleConnect.wxss */
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+.address-add{
+  width:100%;
+  position:fixed;
+  bottom: 0;
+ border-radius:0rpx;
+ margin-bottom: 0;
+
+}

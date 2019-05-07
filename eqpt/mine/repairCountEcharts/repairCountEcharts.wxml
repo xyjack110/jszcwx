@@ -1,0 +1,20 @@
+<!--eqpt/mine/repairCountEcharts/repairCountEcharts.wxml-->
+<view>
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="{{fPsnImg}}" mode="aspectFill" ></image>
+  </view>
+
+<view class="container">
+  <view><text class='title'>{{dateFlag}}维修次数趋势图</text><text class='unit'>(次)</text></view>
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+  
+</view>      
+
+
+  
+<view class="container">
+<view > <text class='title'>{{dateFlag}}维修时间趋势图</text> <text class='unit'>(分)</text></view>
+    <canvas canvas-id="TimelineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandlerTime"></canvas>
+
+</view>
+</view>

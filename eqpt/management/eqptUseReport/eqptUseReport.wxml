@@ -1,0 +1,49 @@
+<!--eqpt/management/eqptUseReport/eqptUseReport.wxml-->
+
+
+
+<view>
+
+
+<!-- 引用组件的模板 -->
+
+     
+          
+
+          <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+
+  <view class="container">
+    <view class='title'>
+      <text>资产报修维修趋势图</text>
+      <text class='unit'>(次)</text>
+    </view>
+    <view wx:if="{{!showChar}}" class="show">
+      <text>无数据\n无法显示趋势图</text>
+    </view>
+
+    <canvas wx:if="{{showChar}}" canvas-id="lineCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+ 
+</view>
+
+
+<view>
+  <view class="container">
+    <view class='title'>
+      <text>资产停机时间修趋势图</text>
+      <text class='unit'>(分钟)</text> </view>
+    <view wx:if="{{!showChar1}}" class="show">
+      <text>无数据\n无法显示趋势图</text>
+    </view>
+
+    <canvas wx:if="{{showChar1}}" canvas-id="lineCanvas1" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+  </view>
+
+
+
+
+</view>
+
+</view>

@@ -1,0 +1,36 @@
+<!--eqpt/management/eqptRepairReport/eqptRepairReport.wxml-->
+<view>
+
+
+
+<!-- 引用组件的模板 -->
+
+     
+          
+
+          <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+  
+
+  <view class="container">
+      <view class='title'>
+      <text >维修工得分分布图</text> <text class='unit'>(分)</text></view>
+   <view wx:if="{{!showChar}}" class="show"> <text>无数据\n无法显示趋势图</text></view> 
+
+    <canvas wx:if="{{showChar}}" canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+  </view>
+
+<view class="container">
+      <view class='title'>
+      <text >维修工报修响应分布图</text> <text class='unit'>(分钟)</text></view>
+   <view wx:if="{{!showChar1}}" class="show"> <text>无数据\n无法显示趋势图</text></view> 
+
+    <canvas wx:if="{{showChar1}}" canvas-id="columnCanvas1" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+  </view>
+
+
+
+
+</view>
+

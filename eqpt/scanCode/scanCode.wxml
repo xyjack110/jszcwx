@@ -1,0 +1,31 @@
+<!--eqpt/scanCode.wxml-->
+
+
+<view class="container">
+
+  <view class="index-hd" bindtap='checkEqptDetail'>
+    <image class="index-logo" src="/page/component/resources/kind/logo.png"></image>
+    <view class="index-desc">本系统可以为资产的报修维修及相关操作提供可追溯记录，同时为管理者提供可视化报表.</view>
+  </view>
+
+
+
+  <view class="page-body">
+
+
+    <view class="greeBtn" bindtap='scanBtn'>
+
+    <view class="c1Text">
+    <view>扫描资产</view>
+     
+       <view>报修二维码</view>
+    
+    </view>
+ 
+
+   </view>
+  </view>
+
+
+
+</view>

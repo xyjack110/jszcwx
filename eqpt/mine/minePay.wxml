@@ -1,0 +1,2 @@
+<!--eqpt/mine/minePay.wxml-->
+    <button type="primary" bindtap="requestPayment" >支付</button>

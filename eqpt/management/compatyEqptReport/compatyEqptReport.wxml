@@ -1,0 +1,63 @@
+<!--eqpt/management/compatyEqptReport/compatyEqptReport.wxml-->
+<view>
+  <view>
+
+<!-- 引用组件的模板 -->
+
+     
+          
+
+          <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+
+    <view class="container">
+      <view class='title'>
+        <text>公司资产状态趋势图</text>
+      </view>
+      <view wx:if="{{!showChar}}" class="show">
+        <text>无数据\n无法显示趋势图</text>
+      </view>
+      <canvas wx:if="{{showChar}}" canvas-id="pieCanvas" class="canvas1" bindtouchstart="touchHandler1"></canvas>
+
+    </view>
+  </view>
+
+  <view>
+    <view class="container">
+      <view class='title'>
+        <text>每月维修次数趋势图</text> </view>
+      <view wx:if="{{!showChar1}}" class="show">
+        <text>无数据\n无法显示趋势图</text>
+      </view>
+
+      <canvas wx:if="{{showChar1}}" canvas-id="lineCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+
+
+    </view>
+  </view>
+  <view>
+    <view class="container">
+      <view class='title'>
+        <text>资产维修分布图</text> </view>
+      <view wx:if="{{!showChar2}}" class="show">
+        <text>无数据\n无法显示分布图</text>
+      </view>
+      <canvas wx:if="{{showChar2}}" canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler1"></canvas>
+
+    </view>
+
+  </view>
+  <view>
+
+    <view class="container">
+      <view class='title'>
+        <text>资产经手人数分布图</text> </view>
+      <view wx:if="{{!showChar3}}" class="show">
+        <text>无数据\n无法显示分布图</text>
+      </view>
+      <canvas wx:if="{{showChar3}}" canvas-id="columnCanvas1" class="canvas"></canvas>
+
+    </view>
+  </view>
+  </view>

@@ -1,0 +1,93 @@
+/* eqpt/management/CompatyEqptFiles/CompatyEqptFiles.wxss */
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgInBlock{
+  width: 120rpx;
+  height: 120rpx;
+
+
+}.textInBlock{
+  margin: 0 30rpx;
+   flex: 1;
+}
+.remarkText{
+    display: flex;
+ color: #999999;
+ font-size:30rpx;
+
+}
+.smallGap{
+
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.cText{
+  display: flex;
+}
+.c1Text{
+ flex:1;
+}
+.c2Text{
+  width: 200rpx;
+  text-align: right;
+ font-size: 24rpx
+}
+.c3Text{
+
+   width: 150rpx;
+
+}
+.c4Text{
+ flex:1;
+   text-align: right
+}
+
+.greenText{
+
+  color: green
+}
+.yellowText{
+    color: orange
+}
+.SureBtn{
+
+      padding: 0rpx 30rpx;
+}
+
+.address-add{
+width: 100%;
+  position:fixed;
+  bottom: 0;
+ border-radius:0rpx;
+ margin-bottom: 0
+}
+.bottomUp{
+
+  margin-bottom: 48px;
+
+}
+.check{
+  margin:0 0 0 20rpx;
+
+}
+.address-add1{
+  width:80rpx;
+  height: 80rpx;
+  position:fixed;
+  bottom: 75rpx;
+  right: 15rpx;
+ border-radius:50rpx;
+ margin-bottom: 0;
+background-color:#3cc51f;
+}
+.editImg{
+  margin: 15rpx 15rpx 15rpx 18rpx;
+
+  width:50rpx;
+  height:50rpx ;
+
+}

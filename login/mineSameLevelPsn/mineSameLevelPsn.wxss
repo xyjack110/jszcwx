@@ -1,0 +1,83 @@
+/* login/mineSameLevelPsn/mineSameLevelPsn.wxss */
+.hd{
+  padding :0rpx;
+}
+image {
+width:320px;
+height:320px;
+display:inline-block;
+overflow:hidden;
+
+}
+.address-add1{
+  width:80rpx;
+  height: 80rpx;
+  position:fixed;
+  bottom: 120rpx;
+  right: 15rpx;
+ border-radius:50rpx;
+ margin-bottom: 0;
+background-color:#3cc51f;
+}
+.editImg{
+  margin: 15rpx 15rpx 15rpx 18rpx;
+
+  width:50rpx;
+  height:50rpx ;
+
+}
+.mini{
+  display: flex;
+
+}
+.setImg{
+  height: 60rpx;
+  width:60rpx; 
+}
+.setImg1{
+  height: 60rpx;
+  width:60rpx; 
+  margin: 0 0 0 20rpx 
+}
+.bom{
+background-color: #ECECEC
+}
+.deptsize{
+  font-size:35rpx;
+color:#3cc51f;
+
+}
+.aa{
+  overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+word-break:break-all;
+width:340rpx;
+ color: #999999;
+ font-size:30rpx;
+ text-align: right
+}
+
+.wx-mask{
+  position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+}
+.delIcon{
+    z-index:3000;
+
+}
+.SureBtn{
+
+      padding: 20rpx 30rpx;
+}
+.tet{
+  color: black;
+ font-size:16px
+}
+
+

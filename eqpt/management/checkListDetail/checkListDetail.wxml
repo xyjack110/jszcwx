@@ -1,0 +1,69 @@
+<!--eqpt/management/checkListDetail/checkListDetail.wxml-->
+<view>
+ 
+
+
+
+  <view class="weui-panel weui-panel_access">
+     <!-- <search id="search1" storyPosition="xy" bind:userInput="userInput"></search> -->
+
+           <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">盘点</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{isChevked}}" bindchange="switch1Change" />
+          </view>
+        </view>
+
+      </view>
+
+    <view class="weui-panel__bd">
+      <block wx:for="{{InventoryRecordDetail}}" wx:key="{{s}}">
+        <navigator url="" class="weui-media-box weui-media-box_appmsg whiteBlock">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.fEqpImg1}}" mode="aspectFill" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view>
+              <view class=" cText">
+
+                <view class=" weui-media-box__title c2Text">{{item.fEqpNum.value}}/{{item.fEqpSize.value}}</view>
+                <view class="c1Text {{item.fEqptStatus.value=='运行正常'?'greenText':'orangeText'}}">{{item.fEqptStatus.value}}</view>
+              </view>
+              <view class="weui-media-box__desc" wx:if="{{item.fName.value}}"> {{item.fName.value}} </view>
+              <view class="weui-media-box__desc" wx:if="{{!item.fName.value}}"> {{item.fName1.value}} </view>
+            </view>
+            <view class="weui-media-box__desc" wx:if="{{item.fName.value}}">
+
+              {{item.fOperationTime.value}} 完成盘点
+            </view>
+
+          </view>
+        </navigator>
+      </block>
+    </view>
+
+  </view>
+
+
+  <view class="weui-loadmore " hidden="{{!isLoading}} ">
+    <view class="weui-loading "></view>
+    <view class="weui-loadmore_tips ">上拉加载更多</view>
+  </view>
+
+
+
+
+
+  <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading}}">
+    <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+  </view>
+
+
+
+
+</view>
+
+<view class='address-add1'  bindtap='exportEqptExcel'>
+  <image class='editImg' src="/image/excelDown.png" mode="aspectFill"></image>
+</view>

@@ -1,0 +1,53 @@
+/* eqpt/eqptDetail/eqptUse/eqptUse.wxss */
+
+.whiteBlock{
+
+    background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgEqpt{
+    width: 160rpx;
+  height: 160rpx;
+
+
+}
+.imgEqptBody{
+ width: 60rpx;
+  height: 60rpx;
+margin: 1rpx;
+}
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.remarkText{
+ color: #999999;
+ font-size:30rpx;
+height: 200rpx;
+width: 100%;
+}
+.lineGap{
+  margin: 20rpx 0 -30rpx ;
+    padding: 20rpx 30rpx;
+
+}
+
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+.textInBlock{
+  
+  margin: 0 0rpx;
+   flex: 1;
+}
+.pick{
+  width:100%
+}
+.positionImg{
+
+  width :55rpx;
+  height: 55rpx;
+}

@@ -1,0 +1,124 @@
+<!--eqpt/management/checkSetDetail/checkSetDetail.wxml-->
+<view class="page-body">
+<view class="page-section">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label ">资产分类</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input value='{{eqptType}}' bindinput="eqptTypeChange"></input>
+      </view>
+      <view class="weui-cell__ft mini">
+        <view class="mini-btn" type="primary" data-index="{{index}}" bindtap='saveBtn'>保存</view>
+
+
+      </view>
+    </view>
+
+  </view>
+
+  <block wx:for="{{checkItems}}" wx:key="{{item.itemName}}">
+
+    <view class="weui-cells ">
+
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label ">输入类型</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker data-index="{{index}}" bindchange="bindPickerChange" value="{{ind}}" range="{{array}}">
+            <view class="weui-input">{{array[item.ind]}}</view>
+          </picker>
+        </view>
+
+        <view class="weui-cell__ft mini">
+      <image src="/image/add.png" class='setImg'  data-index="{{index}}"bindtap='AddBtn'></image>
+     
+
+           <image src="/image/del.png" class='setImg1'    data-index="{{index}}" bindtap='delBtn' wx:if="{{flag}}"></image>
+           
+
+           <image src="/image/up.png" class='setImg1'    data-index="{{index}}" bindtap='upBtn' hidden='{{index==0}}'></image>
+
+          <image src="/image/down.png" class='setImg1'    data-index="{{index}}" bindtap='downBtn' hidden='{{index+1>=checkItems.length}}'></image>
+
+  
+
+        </view>
+      </view>
+
+
+
+
+      <view class="weui-cell ">
+        <view class="weui-cell__hd ">
+          <view class="weui-label ">项目名称</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input value='{{item.itemName}}' data-index="{{index}}" bindchange="itemNameChange"></input>
+        </view>
+
+      </view>
+
+   <view class="weui-cell " wx:if="{{item.itemType=='数字'}}">
+        <view >
+            <input data-index="{{index}}" value='{{item.itemMin}}' bindinput="minChange" type="number" placeholder='最小值'></input>
+        </view>
+        <view class="cell">
+          <input data-index="{{index}}" value='{{item.itemDefault}}' bindinput="defaultChange" type="number" placeholder='默认值'></input>
+        </view>
+        <view class="cell">
+                  <input data-index="{{index}}" value='{{item.itemMax}}' bindinput="maxChange" type="number" placeholder='最大值'></input>
+        </view>
+      </view>
+
+
+
+      <!-- <view class="weui-cell " wx:if="{{item.itemType=='数字'}}">
+        <view class="weui-cell__hd">
+          <view class="weui-label ">最大值</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input data-index="{{index}}" value='{{item.itemMax}}' bindinput="maxChange" type="number"></input>
+        </view>
+      </view> -->
+
+      <!-- <view class="weui-cell " wx:if="{{item.itemType=='数字'}}">
+        <view class="weui-cell__hd">
+          <view class="weui-label ">最小值</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input data-index="{{index}}" value='{{item.itemMin}}' bindinput="minChange" type="number"></input>
+        </view>
+      </view> -->
+
+      <!-- <view class="weui-cell " wx:if="{{item.itemType=='数字'}}">
+        <view class="weui-cell__hd">
+          <view class="weui-label ">默认值</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input data-index="{{index}}" bindinput="defaultChange" value='{{item.itemDefault}}' type="number"></input>
+        </view>
+      </view> -->
+
+      <view class="weui-cell " wx:if="{{item.itemType=='文字'}}">
+
+        <view class="weui-cell__bd">
+          <!-- <textarea data-index="{{index}}" placeholder='此处填写下拉选项，不同选项之间用空格分开' value='{{item.itemOptions}}' bindinput="optionsChange"></textarea> -->
+
+          <input data-index="{{index}}" placeholder='填写下拉选项，用空格分隔' value='{{item.itemOptions}}' bindinput="optionsChange"></input>
+        </view>
+      </view>
+
+
+
+    </view>
+
+  </block>
+
+
+</view>
+
+</view>

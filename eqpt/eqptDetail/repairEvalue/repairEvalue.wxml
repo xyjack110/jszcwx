@@ -1,0 +1,40 @@
+<!--eqpt/eqptDetail/repairEvalue/repairEvalue.wxml-->
+    <import src="/eqpt/eqptDetail/wxStar/wxStar.wxml" />
+    <template is="wxStar" data="{{wxStar: wxStar}}" />
+<view class="container">
+
+  <view class="page-body">
+    
+
+
+    <view class="weui-cells smallGap">
+      <textarea class="remarkText" placeholder="评价内容" bindinput="repairEvalueRemark"></textarea>
+    </view>
+
+
+  
+        
+      <!-- 引用组件的模板 -->
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+                  <!--id="uploader1" 通过ID获取组件传过来的值 -->
+<!-- fileList="{{KeyList}}"指选中图片地址的List。默认值为 空 subPath="eqptImg"指定上传的文件夹。 默认值为 fishbear。 title="相关图片"设置标题。默认值为： 相关图片 edit='{{true}}'指是否为可编辑还是预览。 默认值为 false。 maxCount="{{5}}" 上传最大数量 默认值为 9-->
+          <uploader id="uploader1" fileList="{{KeyList}}" subPath="RepairInfoImg" title="评价图片" edit='{{true}}' maxCount="{{9}}"></uploader>
+        </view>
+      </view>
+    </view>
+   
+
+   <!--
+    <view class='btn-panel'>
+      <button class='btn' bindtap='resetStar'>重置</button>
+      <button class='btn' bindtap='alertStar'>获取当前星数</button>
+    </view>
+-->
+    <view class="SureBtn">
+    <button type="primary" bindtap='saveBtn'> 确定</button>
+  </view>
+
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<!--eqpt/management/orgPerson/orgPerson.wxml-->
+
+
+<wxs module="m1">
+  var manager = function(userID, fManagerID, fCmpyID) {
+
+
+    if ((userID == fManagerID) && fCmpyID) {
+
+      return "管理员";
+    }
+    return "不是管理员";
+  }
+
+  module.exports.manager = manager;
+</wxs>
+
+
+<view>
+  <!-- {{m1.manager(item.fPsnID.value,fManagerID,item.fCmpyID.value)=='管理员'?'greenText':'whiteBlock '}}  " bindtap='edit' id="{{item.fPsnID.value}} -->
+  <block wx:for="{{personList}}" wx:key="{{fID.value}}">
+    <view class="smallGap whiteBlock " hover-class="weui-cell_active">
+      <image class="imgInBlock" src="{{item.fPsnImg.value}}"></image>
+      <view class=" weui-media-box__bd weui-media-box__bd_in-appmsg textInBlock" bindtap='edit' id="{{item.fPsnID.value}}">
+
+        <view class="textInBlock">
+
+
+          <view class="remarkText">
+            <view class="weui-media-box__title c1Text {{m1.manager(item.fPsnID.value,fManagerID,item.fCmpyID.value)=='管理员'?'greenText':'blackText '}}">{{item.fPsnName.value}}</view>
+            <view class="c2Text"> {{item.fPsnAuth.value}}</view>
+
+
+
+
+          </view>
+          <view>{{item.fCellphone.value}}</view>
+
+          <view class="cText">
+
+            <view class=" weui-media-box__title  c3Text"> {{item.fDeptFName.value}} </view>
+            <view class="c4Text"> {{item.fMyDept.value}}</view>
+
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+  </block>
+
+
+  <view class="weui-loadmore " hidden="{{!isLoading}} ">
+    <view class="weui-loading "></view>
+    <view class="weui-loadmore_tips ">上拉加载更多</view>
+  </view>
+
+
+
+
+
+  <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading}}">
+    <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+  </view>
+</view>

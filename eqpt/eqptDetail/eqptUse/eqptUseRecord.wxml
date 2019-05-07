@@ -1,0 +1,52 @@
+<!--eqpt/eqptDetail/eqptUse/eqptUseRecord.wxml-->
+<view>
+
+  <block wx:for="{{eqptUseRecord}}" wx:key="a" >
+    <view class="whiteBlock smallGap" bindtap='checkPersonalDetail' >
+      <image class="imgInBlock" src="{{item.fPsnImg.value}}"  mode="aspectFill"></image>
+
+
+      <view class="textInBlock">
+
+        <view class="cText">
+
+          <view class="c1Text"> {{item.fName.value}} </view>
+                   <view class="c2Text"> {{item.fOprationType.value}} </view>
+          
+        </view>
+
+
+        <view class="remarkText">
+          <view >{{item.fdate}}</view>
+
+ 
+        </view>
+
+
+      </view>
+
+
+
+
+    </view>
+
+
+
+
+    
+  </block>
+
+
+   <view class="weui-loadmore "  hidden="{{!isLoading}} ">
+      <view class="weui-loading "></view>
+      <view class="weui-loadmore_tips ">上拉加载更多</view>
+    </view>
+
+
+
+
+ 
+    <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading}}" >
+      <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+    </view>
+</view>

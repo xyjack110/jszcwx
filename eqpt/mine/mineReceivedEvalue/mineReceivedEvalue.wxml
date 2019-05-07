@@ -1,0 +1,58 @@
+<!--eqpt/mine/mineReceivedEvalue/mineReceivedEvalue.wxml-->
+<view class="container">
+  <view class="page-body">
+
+
+<block wx:for="{{EvalueSoreList}}" wx:key="{{item.fID.value}}">
+
+    <view class="whiteBlock lineGap" bindtap='EvalueSoreList' id="{{item.fPsnID.value}}" data-index="{{index}}"  hover-class="weui-cell_active">
+<view class="num">{{index+1}}</view>
+      <image class="imgInBlock" src="{{item.fPsnImg.value}}"></image>
+
+
+      <view class="textInBlock">
+
+        <view >
+
+          <view > {{item.fPsnName.value}}</view>
+
+        </view>
+
+
+        <view class="remarkText">
+          <view>{{item.fDeptFName.value}}</view>
+
+
+        </view>
+
+
+      </view>
+         <view >{{item.repairCount.value}}分</view>
+
+    </view>
+
+</block>
+
+
+
+ <block wx:if="{{isLoading }}">
+    <view class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore_tips">上拉加载更多</view>
+    </view>
+
+  </block>
+
+
+  <block wx:if="{{!isLoading }}">
+    <view class="weui-loadmore weui-loadmore_line">
+      <view class="weui-loadmore_tips weui-loadmore_tips_in-line">加载完成</view>
+    </view>
+  </block>
+
+
+
+  </view>
+
+
+</view>

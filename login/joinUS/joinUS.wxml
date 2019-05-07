@@ -1,0 +1,49 @@
+<!--login/joinUS/joinUS.wxml-->
+<view class="page">
+
+  <view class="weui-toptips weui-toptips_warn " wx:if="{{showTopTips}}">{{ErrorMsg}}</view>
+  <view class="weui-msg">
+    <view class="weui-msg__icon-area">
+ 
+      <image class="userinfo-avatar" wx:if="{{params.flag}}" src="{{params.imgsrc}}"></image>
+           <image class="userinfo-avatar"  wx:if="{{!params.flag}}"src="{{src}}"></image>
+    </view>
+    <view class="weui-msg__text-area">
+      <view class="weui-msg__title">{{params.deptName}}
+</view>
+
+            <view class="weui-msg__desc txt">
+  
+        <text>管理人员：{{params.managerName
+}}</text>
+        
+           
+      </view>
+            <view class="weui-msg__desc txt">
+ 
+          <text>失效时间：{{params.session
+}}</text>
+           
+      </view>
+    </view>
+
+
+
+
+    
+    <view class="weui-msg__opr-area">
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap='addPsn' wx:if="{{dataAvilble&&orgAvilble}}">同意加入</button>
+        <button class="weui-btn" type="default" open-type="share">转发邀请</button>
+      </view>
+    </view>
+    <view class="weui-msg__extra-area">
+      <view class="weui-footer">
+        <view class="weui-footer__links">
+          <navigator url="" class="weui-footer__link">鱼熊企管咨询</navigator>
+        </view>
+       <view class="weui-footer__text">Copyright © 2008-2028 fishbear.com.cn</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<!--eqpt/management/companySet/companySet.wxml-->
+<view>
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0"></image>
+  </view>
+
+
+
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label  cText">额定人数</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="weui-input">{{array[index]}}</view>
+        </picker>
+      </view>
+      <view class="cText">复位</view>
+    </view>
+
+
+  <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label cText">额定期限</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{time}}" start="2017-01-01" end="2081-01-01" bindchange="bindTimeChange">
+          <view class="weui-input">{{ date }}
+          </view>
+        </picker>
+      </view>
+      <view class="cText">复位</view>
+    </view>
+
+ <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label cText">应付费用</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input value='30.00'></input>
+      </view>
+      <view class="cText">元</view>
+    </view>
+
+
+  </view>
+
+
+
+
+  <view class="remark1">价格标准:每人每天1.00元</view>
+
+
+  <view class="SureBtn">
+    <button type="primary" bindtap=''> 充值</button>
+    <button type="default" bindtap='rechargeRecord'>充值记录</button>
+  </view>
+
+</view>

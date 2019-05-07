@@ -1,0 +1,76 @@
+/* eqpt/mine/EqptUseRecordDetail/EqptUseRecordDetail.wxss */
+/* eqpt/mine/check1RecordDetail/check1RecordDetail.wxss */
+
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgInBlock{
+  width: 120rpx;
+  height: 120rpx;
+
+}
+.textInBlock{
+  margin: 0 30rpx;
+   flex: 1;
+}
+.remarkText{
+ color: #999999;
+ font-size:30rpx;
+}
+.iconInBlock{
+  width: 60rpx;
+  height: 60rpx;
+}
+.smallGap{
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.bigGap{
+    margin: 30rpx 0 0;
+      padding: 30rpx;
+}
+.lineGap{
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.redText{
+   color: red;
+}
+.ColorText{
+
+   color: #999999;
+}
+.psnImg1{
+  flex:1;
+text-align:right;
+
+}
+.psnImg2{
+width:150rpx;
+text-align: center
+
+}
+.psnImg3{
+  flex:1;
+
+}
+.EvalueImg{
+  width: 60rpx;
+  height: 60rpx;
+}
+.imgEqpt{
+    width: 160rpx;
+  height: 160rpx;
+}
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.positionImg{
+
+  width :50rpx;
+  height: 50rpx;
+}

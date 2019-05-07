@@ -1,0 +1,143 @@
+<!--eqpt/eqptDetail/eqptRepair/repairDetail.wxml-->
+<wxs module="m1">
+  var getFirstImgFromList = function(ImgList) {
+
+    if (ImgList == undefined) {
+      return "/image/eqpt.png";
+    }
+    if (ImgList == "") {
+      return "/image/eqpt.png"
+    } else {
+      var fEqpImgArr = ImgList.split("@")
+      return fEqpImgArr[0]
+    }
+
+
+  }
+  var toJson = function(str) {
+    return JSON.parse(str)
+  }
+
+  module.exports.getFirstImgFromList = getFirstImgFromList;
+  module.exports.toJson = toJson;
+</wxs>
+
+
+
+
+
+<view class="container">
+  <view class="page-body">
+
+    <view class="weui-media-box weui-media-box_appmsg whiteBlock">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+
+        <image class="weui-media-box__thumb  imgInBlock" src="{{m1.getFirstImgFromList(repairDetail.fEqpImg.value)}}" mode="aspectFill"></image>
+      </view>
+
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view>
+          <view class='weui-media-box__title'>{{repairDetail.fEqpNum.value}} </view>
+          <view class="cText">
+
+            <view class=" c1Text">{{repairDetail.fEqpType.value}}</view>
+            <view class="weui-media-box__title c3Text">{{repairDetail.fEqpSize.value}}</view>
+
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        报修人
+      </view>
+      <view class="c2Text">{{repairDetail.repairInfoPsnName.value}}</view>
+            <!-- <view class="c3Text">{{repairDetail.repairDeptFName.value}}</view> -->
+    
+<!-- <view class="c2Text">{{repairDetail.repairDeptFName}}</view> -->
+      </view>
+    
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        维修人
+      </view>
+      <view class="textInBlock">{{repairDetail.fPsnName.value}}</view>
+      <view>
+        <image wx:if='{{repairDetail.fCellphone.value}}' src="/image/phone.png" class="phoneImg" bindtap='call'></image>
+      </view>
+    </view>
+
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        维修时间
+      </view>
+      <view class="textInBlock"> {{repairDetail.fdate}}</view>
+
+    </view>
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        维修时长
+      </view>
+      <view class="textInBlock"> {{repairDetail.fProdCount.value}} 分钟</view>
+
+    </view>
+
+    <view class="whiteBlock lineGap" wx:if="{{repairDetail.fOperationPosition.value}}">
+
+      <view class="remarkText">
+        维修地址
+      </view>
+      <view class="textInBlock">{{repairDetail.fOperationPosition.value?m1.toJson(repairDetail.fOperationPosition.value).name:""}}</view>
+
+      <view>
+
+        <image src="/image/positionOK.png" class="positionImg" bindtap='openPosition'></image>
+      </view>
+    </view>
+
+
+    <view class="whiteBlock lineGap" wx:if="{{repairDetail.score.value}}">
+
+      <view class="remarkText">
+        维修评价
+      </view>
+      <view class="textInBlock"> {{repairDetail.score.value}} 分</view>
+
+    </view>
+
+    <view class="closeBtn">
+      <button wx:if="{{!repairDetail.score.value && EvalueFlag==true}}" type='primary' bindtap='giveEvalue'>给他一个评价</button>
+    </view>
+    <view class="weui-cells">
+      <view class="textarea textRemark"> {{repairDetail.fOperationDesc.value}} </view>
+    </view>
+
+    <!-- 引用组件的模板 -->
+    <view class="weui-cells " wx:if='{{imgList.length>0}}'>
+      <view class="weui-cell">
+
+        <!--id="uploader1" 通过ID获取组件传过来的值 -->
+        <!-- fileList="{{KeyList}}"指选中图片地址的List。默认值为 空 subPath="eqptImg"指定上传的文件夹。 默认值为 fishbear。 title="相关图片"设置标题。默认值为： 相关图片 edit='{{true}}'指是否为可编辑还是预览。 默认值为 false。 maxCount="{{5}}" 上传最大数量 默认值为 9-->
+        <uploader id="uploader1" fileList="{{imgList?imgList:[]}}" title="维修图片" edit='{{false}}'></uploader>
+
+      </view>
+    </view>
+
+
+
+
+  </view>
+</view>

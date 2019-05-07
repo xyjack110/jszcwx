@@ -1,0 +1,7 @@
+{
+"usingComponents": {
+  "uploader": "/fishbearComponents/uploader/uploader"
+},
+"navigationBarTitleText": "维修评价"
+
+}

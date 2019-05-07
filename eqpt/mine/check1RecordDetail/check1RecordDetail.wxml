@@ -1,0 +1,112 @@
+<!--eqpt/mine/check1RecordDetail/check1RecordDetail.wxml-->
+
+<wxs module="m1">
+  var getFirstImgFromList = function(ImgList) {
+
+    if (ImgList == undefined) {
+      return "/image/eqpt.png";
+    } 
+    if (ImgList == "") {
+      return "/image/eqpt.png"      
+    } else {
+      var fEqpImgArr = ImgList.split("@")
+      return fEqpImgArr[0]
+    }
+
+
+  }
+  var toJson = function(str) {
+    return JSON.parse(str)
+  }
+
+  module.exports.getFirstImgFromList = getFirstImgFromList;
+  module.exports.toJson = toJson;
+</wxs>
+
+
+
+<view class="container">
+  <view class="page-body">
+
+
+    <view class="imgEqptView">
+      <image class="imgEqpt" src="{{otherRecordDetail.fEqpImg1}}" mode='aspectFill'></image>
+    </view>
+
+
+
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        操作类型
+      </view>
+      <view class="textInBlock">{{otherRecordDetail.fOprationType .value}}
+      </view>
+
+    </view>
+    <view class="whiteBlock lineGap" wx:if='{{otherRecordDetail.fEqptStatus.value}}'>
+
+      <view class="remarkText">
+        资产状态
+      </view>
+      <view class="textInBlock">{{otherRecordDetail.fEqptStatus.value}}</view>
+    </view>
+
+<view class="whiteBlock lineGap" wx:if="{{otherRecordDetail.fOperationPosition.value?m1.toJson(otherRecordDetail.fOperationPosition.value).name:''}}">
+
+          <view class="remarkText">
+            操作地址
+          </view>
+          <view class="textInBlock">{{otherRecordDetail.fOperationPosition.value?m1.toJson(otherRecordDetail.fOperationPosition.value).name:''}}</view>
+
+          <view>
+
+            <image src="/image/positionOK.png" class="positionImg" bindtap='openPosition'></image>
+          </view>
+        </view>
+
+
+
+
+
+    <view class="whiteBlock lineGap">
+
+      <view class="remarkText">
+        操作时间
+      </view>
+      <view class="textInBlock">{{otherRecordDetail.fdate}}</view>
+    </view>
+
+
+    <view class="whiteBlock lineGap" wx:if="{{otherRecordDetail.fOperationDesc.value}}">
+
+      <view class="remarkText">
+        操作内容
+      </view>
+      <view class="textInBlock">{{otherRecordDetail.fOperationDesc.value}}</view>
+    </view>
+
+    <!-- 引用组件的模板 -->
+    <view class="weui-cells" wx:if="{{imgList[0]}}">
+      <view class="weui-cell">
+
+        <!--id="uploader1" 通过ID获取组件传过来的值 -->
+        <!-- fileList="{{KeyList}}"指选中图片地址的List。默认值为 空 subPath="eqptImg"指定上传的文件夹。 默认值为 fishbear。 title="相关图片"设置标题。默认值为： 相关图片 edit='{{true}}'指是否为可编辑还是预览。 默认值为 false。 maxCount="{{5}}" 上传最大数量 默认值为 9-->
+        <uploader id="uploader1" fileList="{{imgList?imgList:[]}}" title="操作图片" edit='{{false}}'></uploader>
+
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+
+
+  </view>
+</view>

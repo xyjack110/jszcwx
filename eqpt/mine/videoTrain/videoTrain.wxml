@@ -1,0 +1,2 @@
+<!--eqpt/mine/videoTrain/videoTrain.wxml-->
+<web-view src="{{src}}"></web-view>

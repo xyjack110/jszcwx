@@ -1,0 +1,16 @@
+/* eqpt/mine/personalDetail/personalDetailName/personalDetailName.wxss */
+
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.lineGap{
+  margin: 50rpx 0;
+    padding: 20rpx 30rpx;
+}
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}

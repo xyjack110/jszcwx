@@ -1,0 +1,16 @@
+<!--eqpt/eqptDetail/eqptSale/eqptSale.wxml-->
+
+<view>
+<view class="imgEqptView">
+    <image class="imgEqpt" src="{{src}}"  mode="aspectFill"></image>
+</view>
+
+
+
+<view class="Text">
+<view>1.请接收方，使用微信扫描该二维码，在系统上接收该资产</view>
+<view>2.接收方可以查看该资产在本公司的操作记录</view>
+<view>3.也可以先报废本资产，接受方再生成新的资产二维码</view>
+
+</view>
+</view>

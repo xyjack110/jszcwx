@@ -1,0 +1,56 @@
+<!--eqpt/management/repairInfoAvgTime/repairInfoAvgTime.wxml-->
+<view class="container">
+  <view class="page-body">
+
+
+<block wx:for="{{repairAvgTimeList}}" wx:key="{{item.fID.value}}">
+
+    <view class="whiteBlock lineGap"    hover-class="weui-cell_active">
+<view class="num">{{index+1}}</view>
+      <image class="imgInBlock" src="{{item.fPsnImg.value}}"></image>
+
+
+      <view class="textInBlock">
+
+        <view >
+
+          <view > {{item.name.value}}</view>
+
+        </view>
+
+
+        <view class="remarkText">
+          <view>{{item.fName.value}}</view>
+
+        </view>
+
+      </view>
+         <view >{{item.avgTime.value}}分钟</view>
+
+    </view>
+
+</block>
+
+
+
+ <block wx:if="{{isLoading }}">
+    <view class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore_tips">上拉加载更多</view>
+    </view>
+
+  </block>
+
+
+  <block wx:if="{{!isLoading }}">
+    <view class="weui-loadmore weui-loadmore_line">
+      <view class="weui-loadmore_tips weui-loadmore_tips_in-line">加载完成</view>
+    </view>
+  </block>
+
+
+
+  </view>
+
+
+</view>

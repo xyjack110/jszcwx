@@ -1,0 +1,59 @@
+/* eqpt/mine/WeCheckRecord/WeCheckRecord.wxss */
+
+.whiteBlock{
+
+ 
+  align-items: flex-start;
+}
+.imgInBlock{
+  width: 120rpx;
+  height: 120rpx;
+
+
+}.textInBlock{
+  margin: 15rpx 30rpx 0;
+   flex: 1;
+}
+.remarkText{
+    display: flex;
+
+ font-size:30rpx;
+
+}
+.smallGap{
+
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.cText{
+  display: flex;
+}
+.c1Text{
+ flex:1;
+   text-align: left;
+}
+.c2Text{
+  text-align: left;
+  width: 150rpx;
+ 
+}
+.remark{
+  text-align: left;
+   color: #999999;
+ font-size:26rpx;
+}
+.repairText{
+ font-size:26rpx;
+}
+.DateText{
+   width: 250rpx; 
+}
+.meta{
+   padding-left: 0em; 
+}
+.weui-media-box__desc{
+-webkit-line-clamp:1;
+}
+.info{
+  margin-top: 12rpx;
+}

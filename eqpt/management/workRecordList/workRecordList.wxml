@@ -1,0 +1,28 @@
+
+
+  <view>
+
+<!-- 引用组件的模板 -->
+
+     
+          
+
+          <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+    <view class="container">
+      <view class='title'>
+        <text>工作录入量趋势图</text>
+      </view>
+      <view wx:if="{{!showChar1}}" class="show">
+        <text>无数据\n无法显示趋势图</text>
+      </view>
+
+      <canvas wx:if="{{showChar1}}" canvas-id="lineCanvas1" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+    </view>
+
+
+
+
+  </view>
+

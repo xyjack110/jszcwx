@@ -1,0 +1,82 @@
+/* eqpt/mine/mine.wxss */
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgInBlock{
+  width: 120rpx;
+  height: 120rpx;
+
+}
+.textInBlock{
+  margin: 0 30rpx;
+   flex: 1;
+}
+.textInBtn{
+ margin: 0 30rpx;
+
+background-color:white;
+flex:1;
+text-align:left;
+
+
+}
+
+
+.button-hover[type=primary] {
+color:red;
+
+
+}
+
+.remarkText{
+ color: #999999;
+ font-size:30rpx;
+}
+.iconInBlock{
+  width: 60rpx;
+  height: 60rpx;
+}
+.smallGap{
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.bigGap{
+    margin: 30rpx 0 0;
+      padding: 30rpx 0;
+}
+.lineGap{
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.redText{
+   color: red;
+}
+.ColorText{
+
+   color: #999999;
+}
+.scanCodeBtn{
+  background-color:white;
+
+}
+.orgBlock{
+  width:32rpx;
+height:36rpx;
+margin-bottom:-5rpx;
+margin-left:5rpx;
+
+}
+.icon{
+  margin-bottom:-5rpx;
+margin-left:5rpx;
+}
+.weui-cell_active {
+  background-color: #ECECEC;
+}
+.cText{
+  display: flex
+}
+

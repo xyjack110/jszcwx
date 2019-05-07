@@ -1,0 +1,58 @@
+/* eqpt/mine/EvalueDetail/EvalueDetail.wxss */
+
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+ 
+  align-items: flex-start;
+}
+.imgInBlock{
+  width: 120rpx;
+  height: 120rpx;
+
+
+}
+.textInBlock{
+  margin: 15rpx 30rpx 0;
+   flex: 1;
+}
+.remarkText{
+    display: flex;
+
+ font-size:30rpx;
+
+}
+.smallGap{
+
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.bigGap{
+    margin: 50rpx 0 0;
+    padding: 20rpx 30rpx;
+}
+.cText{
+  display: flex;
+}
+.c1Text{
+ flex:1;
+}
+.c2Text{
+  text-align: right;
+  width: 200rpx;
+    color: #999999;
+}
+.remark{
+  text-align: left;
+   color: #999999;
+ font-size:26rpx;
+}
+.lineGap{
+    margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}

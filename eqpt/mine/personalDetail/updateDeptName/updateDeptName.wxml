@@ -1,0 +1,38 @@
+<!--eqpt/mine/personalDetail/updateDeptName/updateDeptName.wxml-->
+<view>
+  <view class="imgEqptView">
+     <!-- <image class="imgEqpt" src="{{companyLogo}}" bindlongtap='updateLogo' mode='aspectFill'></image>  -->
+          <image class="imgEqpt" src="{{companyLogo}}" mode='aspectFill'></image> 
+  </view>    
+  <!-- <view class="remark" wx:if="{{logoFlag}}">长按图片更换logo</view> -->
+
+
+  <view class="weui-cells weui-cells_after-title">
+
+
+   
+
+      <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label cText">部门名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input value='{{fMyDept}}' bindinput="inputChange"></input>
+      </view>
+
+    </view>
+
+  </view>
+
+
+
+
+
+
+
+
+
+  <view class="SureBtn">
+    <button type="primary" bindtap='deptChange'> 确定</button>
+  </view>
+</view>

@@ -1,0 +1,132 @@
+<!--eqpt/mine/mineRepairInfoRecord/mineRepairInfoRecord.wxml-->
+<view>
+  <!-- 引用组件的模板 -->
+
+
+  <search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <block wx:for="{{repairInfoList}}" wx:key="{{item.fID.value}}">
+
+        <navigator url="" class="weui-media-box weui-media-box_appmsg whiteBlock" bindtap='checkRepairInfoDetail' id="{{item.fID.value}}">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" mode="aspectFill" src="{{item.fEqpImg1}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view>
+              <view class="cText">
+                <view class="weui-media-box__title c1Text">{{item.fEqpNum.value}} /{{item.fEqpSize.value}}</view>
+                <view class="c2Text {{item.fOperationTime2.value?'greenText':'redText'}}"> {{item.fOperationTime2.value?'已完成':item.fEqptStatus.value}} </view>
+
+
+              </view>
+              <view class="weui-media-box__desc c1Text">{{item.fName.value}}</view>
+            </view>
+            <view class="weui-media-box__info info">
+              <view class="weui-media-box__info__meta meta ">{{item.repairCount.value}}次维修</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra meta ">{{item.fdate}}</view>
+
+
+            </view>
+          </view>
+        </navigator>
+
+
+      </block>
+    </view>
+  </view>
+
+
+
+
+
+
+  <!-- <view class="weui-panel weui-panel_access ">
+    <view class="weui-panel__bd ">
+      <block wx:for="{{repairInfoList}} " wx:key="{{item.fID.value}} ">
+
+
+        <navigator url=" " class="weui-media-box weui-media-box_appmsg " bindtap='checkRepairInfoDetail' id="{{item.fID.value}} ">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg ">
+            <image class="weui-media-box__thumb " mode="aspectFill " src="{{item.fEqpImg1}} " />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg ">
+            <view>
+              <view class="weui-media-box__title cText ">
+                <view class='c1Text'> {{item.fEqpNum.value}} /{{item.fEqpSize.value}}</view>
+                <view class="c2Text {{item.fOperationTime2.value? 'greenText': 'redText'}} "> {{item.fOperationTime2.value?'已完成':'进行中'}} </view>
+
+
+
+              </view>
+              <view class="weui-media-box__desc "> {{item.fOperationDesc.value}}</view>
+            </view>
+            <view class="weui-media-box__info ">
+              <view class="weui-media-box__info__meta meta ">{{item.fEqptStatus.value}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra meta ">{{item.fdate}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra meta ">{{item.repairCount.value}}次维修</view>
+
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+
+
+
+
+
+
+  </view> -->
+
+
+
+  <!-- <view class="weui-panel weui-panel_access ">
+
+      <view class="weui-panel__bd ">
+        <checkbox-group bindchange="checkboxChange ">
+          <block wx:for="{{repairInfoList}} " wx:key="{{item.fID.value}} ">
+            <view class="weui-media-box weui-media-box_appmsg " hover-class="weui-cell_active " >
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg ">
+                <image class="weui-media-box__thumb " src="{{item.fEqpImg1}} " mode="aspectFill " />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg ">
+                <view class="weui-media-box__title " bindtap='closeRepair'>{{item.fEqpSize.value}}/{{item.fEqpNum.value}}</view>
+                <view class="weui-media-box__desc ">
+                  <text>{{item.fEqpType.value}}</text>/
+                  <text>{{item.fEqpSize.value}}</text>
+                </view>
+                <view class="weui-media-box__desc ">{{item.fEqpDesc.value}}</view>
+              </view>
+
+              <view class="weui-media-box__ft " wx:if="{{editStatus}} ">
+                <checkbox value="{{item.fEqpID.value}} " />
+              </view>
+            </view>
+          </block>
+        </checkbox-group>
+      </view>
+
+    </view> -->
+
+
+
+
+  <view class="weui-loadmore " hidden="{{!isLoading}} ">
+    <view class="weui-loading "></view>
+    <view class="weui-loadmore_tips ">上拉加载更多</view>
+  </view>
+
+
+
+
+
+  <view class="weui-loadmore weui-loadmore_line " hidden="{{isLoading}}">
+    <view class="weui-loadmore_tips weui-loadmore_tips_in-line ">加载完成</view>
+  </view>
+
+
+
+
+</view>

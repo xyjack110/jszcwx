@@ -1,0 +1,53 @@
+/* eqpt/eqptDetail/eqptDetail.wxss */
+.whiteBlock{
+
+    background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgEqpt{
+    width: 100%;
+  height: 240rpx;
+
+
+}
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.remarkText{
+ color: #999999;
+ font-size:29rpx;
+ width: 200rpx
+}
+.textInBlock{
+  margin: 0 30rpx;
+   flex: 1;
+ word-break: break-all;
+}
+
+.lineGap{
+  margin: 5rpx 0;
+    padding: 20rpx 30rpx;
+}
+.useImgEqpt{
+      width: 55rpx;
+  height: 55rpx;
+
+
+}
+.bigGap{
+    margin: 30rpx 0 0;
+      padding: 20rpx 30rpx;
+}
+
+.orangeText{
+  color: orange
+}
+.weui-cell_active {
+  background-color: #ECECEC;
+}
+
+
+

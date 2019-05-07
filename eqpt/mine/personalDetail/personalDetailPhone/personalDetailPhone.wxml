@@ -1,0 +1,38 @@
+<!--eqpt/mine/personalDetail/personalDetailPhone/personalDetailPhone.wxml-->
+<view>
+  <view class="weui-toptips weui-toptips_warn " wx:if="{{showTopTips}}">{{ErrorMsg}}</view>
+
+
+  <view class="weui-cells weui-cells_after-title samllGap">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input placeholder='输入新手机号' type='number' bindinput="inputChange" value='{{fCellphone}}' focus='{{fCellphoneFocus}}'></input>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="weui-cells weui-cells_after-title samllGap">
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+     <view class="weui-cell__hd">
+          <view class="weui-label">验证码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入验证码"  type='number' onblur='inputCodeChange'/>
+        </view>
+        <view class="weui-cell__ft">
+          <view class="weui-vcode-btn" bindtap='getCode' >{{getText}}</view>
+        </view>
+    </view>
+  </view>
+
+
+
+
+  <view class="SureBtn">
+    <button type="primary" bindtap='updataPhoneBtn' disabled='{{!zhengTrue}}' > 确定</button>
+  </view>
+</view>

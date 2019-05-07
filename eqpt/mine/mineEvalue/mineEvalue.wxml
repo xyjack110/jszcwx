@@ -1,0 +1,63 @@
+<!--eqpt/mine/mineEvalue/mineEvalue.wxml-->
+<!-- 引用组件的模板 -->
+
+
+<search id="search1" storyPosition="xy" bind:userInput="userInput"></search>
+
+<view class="container">
+  <view class="page-body">
+
+
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <block wx:for="{{mineEvakueList}}" wx:key="{{item.fID.value}}">
+
+          <navigator url="" class="weui-media-box weui-media-box_appmsg " id="{{item.fID.value}}" bindtap='checkEvalueDetail'>
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{item.fPsnImg1.value}}" mode="aspectFill" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view>
+                <view class="cText">
+                  <view class="weui-media-box__title c1Text">{{item.fPsnName1.value}}</view>
+                  <view class="c2Text" id="{{item.fID.value}}">{{item.fProdCount.value}} 分</view>
+
+                  <!-- <view class="c2Text" wx:if="{{!item.score.value}}" bindtap='repairEvalue' id="{{item.fID.value}}" data-index='{{index}}'>
+                  <image src="/image/giveEvalue.png" class="positionImg"></image>
+
+                </view> -->
+                </view>
+                <view class="weui-media-box__desc"> {{item.fName1.value}}</view>
+              </view>
+              <view class="weui-media-box__info info">
+                <!-- <view class="weui-media-box__info__meta meta">{{item.fEqptStatus.value}}</view> -->
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra meta noline">{{item.fdate}}</view>
+                <!-- <view class="weui-media-box__info__meta weui-media-box__info__meta_extra meta">{{item.fProdCount.value}} 分钟</view> -->
+
+              </view>
+            </view>
+          </navigator>
+
+
+        </block>
+      </view>
+    </view>
+
+
+    <block wx:if="{{isLoading }}">
+      <view class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore_tips">上拉加载更多</view>
+      </view>
+
+    </block>
+
+
+    <block wx:if="{{!isLoading }}">
+      <view class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore_tips weui-loadmore_tips_in-line">加载完成</view>
+      </view>
+    </block>
+  </view>
+</view>

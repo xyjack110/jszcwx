@@ -1,0 +1,24 @@
+<!--eqpt/mine/personalDetail/personalDetailName/personalDetailName.wxml-->
+
+<view>
+
+
+
+
+  <view class="weui-cells weui-cells_after-title samllGap">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <view class="weui-label">姓名</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input placeholder='输入姓名' bindinput='inputChange' value='{{fPsnName}}'></input>
+      </view>
+    </view>
+  </view>
+
+
+<view class="SureBtn">
+  <button type="primary" bindtap='updataNameBtn'> 确定</button>
+</view>
+
+</view>

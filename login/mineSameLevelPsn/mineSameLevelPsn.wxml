@@ -1,0 +1,187 @@
+<!--login/mineSameLevelPsn/mineSameLevelPsn.wxml-->
+
+<wxs module="m1">
+  var getFatherPath = function(path) {
+    var t = path.split("/")
+    t.length = t.length - 1;
+    return t.join("/")
+
+  }
+
+  var instr = function(str, substr) {
+    if (typeof str == "string") {
+      return str.indexOf(substr) >= 0
+    } else {
+      return false
+    }
+
+
+  }
+
+
+
+
+  module.exports.getFatherPath = getFatherPath;
+  module.exports.instr = instr;
+</wxs>
+
+<view class="page">
+
+<view class="wx-mask" wx:if="{{activePath && !orgClip.fID.value}}" bindtap='CancelActive'></view>
+<view class="weui-panel">
+  <view class="weui-toptips weui-toptips_warn " wx:if="{{showTopTips}}">{{ErrorMsg}}</view>
+  <view class="weui-panel__hd hd" bindtap='CancelActive'>
+    <view class="weui-cell ">
+      <view class="weui-cell__bd deptsize">{{current.fName.value}}</view>
+      <view class="weui-cell__ft" bindtap='goBack' hidden="{{current.fLevel.value<1}}">
+        <image src="/login/images/back.png"  style="width: 25px;height: 25px" />
+      </view>
+    </view>
+  </view>
+ <!-- hidden="{{item.fID.value==orgClip.fID.value || (item.fPsnID.value && orgClip.fID.value)}}" -->
+  <view class="weui-panel__bd" hidden="{{current.fPsnID.value}}" >
+    <block wx:for="{{sons}}" wx:key="{{item.fID.value}}">
+      <view class="weui-media-box weui-media-box_small-appmsg" id="{{item.fPath.value}}" bindlongpress='touchmove' bindtap='loadNextDept'  data-index="{{index}}" style="pointer-events:{{item.fPsnID.value && orgClip.fID.value?'none':''}}"  hidden="{{item.fID.value==orgClip.fID.value }}">
+        <view class="weui-cells weui-cells_in-small-appmsg" >
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd" >
+              <image src="{{item.fPsnID.value?item.avatarUrl.value:'/login/images/org.png'}}" style="width: 20px;height: 20px;margin-right: 5px ;opacity:{{item.fPsnID.value && orgClip.fID.value?'0.2':''}} "/>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary"style="color:{{item.fPsnID.value && orgClip.fID.value?'#999999':item.fID.value==managerID?'orange':''}}" >
+              {{item.fName.value}}
+            </view>
+            <view   class="aa" hidden="{{activePath==item.fPath.value }}">{{item.fAuth.value}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access" hidden="{{activePath==item.fPath.value || (item.fPsnID.value && orgClip.fID.value)}}" ></view>
+            <view class="weui-cell__ft mini delIcon" wx:if="{{activePath==item.fPath.value && !orgClip.fID.value}}">
+              <image src="/login/images/up.png" class='setImg ' bindtap='upOrg' id="{{item.fID.value }}" data-index='{{index}}'></image>
+
+              <image src="/login/images/copy.png" bindtap='clipDept' id="{{item.fID.value }}" class='setImg1 '></image>
+
+              <image src="/login/images/del.png" class='setImg1 ' bindtap='delDept' id="{{item.fID.value }}" data-index="{{item.fPath.value}}"></image>
+
+              <image src="/login/images/down.png" class='setImg1 ' bindtap='downOrg' id="{{item.fID.value }}" data-index='{{index}}'></image>
+
+            </view>
+          </navigator>
+
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<view class="weui-footer weui-footer_fixed-bottom" hidden='{{!orgClip.fID.value || activePath }}'>
+  <view class="weui-media-box weui-media-box_small-appmsg ">
+    <view class="weui-cells weui-cells_in-small-appmsg">
+      <navigator url="" class="weui-cell weui-cell_access bom" hover-class="weui-cell_active">
+        <view class="weui-cell__hd" bindtap='clearClip'>
+          <image src="/login/images/clip.png" style="width: 20px;height: 20px;margin-right: 5px" />
+        </view>
+        <view class="weui-cell__bd weui-cell_primary">
+          <view>{{orgClip.fName.value}}</view>
+        </view>
+        <view class="weui-cell__ft " bindtap='orgMove' hidden="{{m1.getFatherPath(orgClip.fPath.value)==current.fPath.value}}">放这里</view>
+      </navigator>
+
+    </view>
+  </view>
+</view>
+
+<view class='address-add1' bindtap='relateActionNew' hidden="{{orgClip.fID.value || !m1.instr(orgInfo.fAuth.value,'人员维护')||current.fPsnID.value}}">
+  <image class='editImg' src="/login/images/other.png" mode="aspectFill"></image>
+</view>
+
+
+
+
+
+
+
+
+
+<view class="container" hidden='{{!current.fPsnID.value}}'>
+
+
+  <view class="page-body">
+    <view class="page-section">
+
+      <view>用户权限</view>
+
+
+
+
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange" >
+          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.value}}">
+            <view class="weui-cell__hd">
+              <checkbox value="{{item.value}}"disabled='{{!BtnShow}}' checked="{{m1.instr(params.fAuth.value,item.value)}}" />
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+         
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+
+
+    <view class="weui-msg__text-area">
+
+
+            <view class="weui-msg__desc txt">
+  
+        <text class="tet">人员维护：</text>
+             <view>可以添加人员，添加部门，给人员授权,移动人员和部门，给组织排序</view>
+           
+      </view>
+
+
+
+
+
+
+
+      
+            <view class="weui-msg__desc txt">
+ 
+          <text class="tet">部门查询：</text>
+             < view >可以查看，他所在部门的所有操作记录</view>
+      </view>
+                  <view class="weui-msg__desc txt">
+ 
+          <text  class="tet">资产管理员：</text>
+           <view>可以查询公司资产,资产采购入库。可以对资产点检，盘点，以及报废，可以补打资产标签。</view>
+           
+      </view>
+                  <view class="weui-msg__desc txt">
+ 
+          <text class="tet">资产入库：</text>
+              <view>可以进行资产的录入。</view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <view class="SureBtn" wx:if="{{BtnShow}}">
+      <button type="primary" bindtap='updataPsnAuthBtn'> 确定</button>
+
+    </view>
+
+  </view>
+
+
+</view>
+</view>

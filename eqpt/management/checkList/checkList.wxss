@@ -1,0 +1,55 @@
+/* eqpt/management/checkList/checkList.wxss */
+
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.textInBlock{
+  margin: 15rpx 30rpx 0;
+   flex: 1;
+}
+.remarkText{
+    display: flex;
+
+ font-size:30rpx;
+
+}
+.lineGap{
+  margin: 5rpx 0;
+    padding: 20rpx 30rpx;
+}
+.smallGap{
+  margin: 20rpx 0 0;
+    padding: 20rpx 30rpx;
+}
+
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+.imgInBlock{
+  width: 120rpx;
+  height: 120rpx;
+margin: 0 15rpx;
+}
+.cText{
+  display: flex;
+  color: #999999;
+  font-size: 28rpx;
+}
+.c1Text{
+ flex:1;
+}
+.c2Text{
+  text-align: right;
+  width: 200rpx;
+ 
+}
+.weui-media-box__info{
+  margin-top: 5rpx;
+}
+.weui-cell_active {
+  background-color: #ECECEC;
+}

@@ -1,0 +1,31 @@
+/* eqpt/management/companySet/companySet.wxss */
+
+.imgEqpt{
+    width: 160rpx;
+  height: 160rpx;
+}
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+
+      padding: 20rpx 30rpx;
+}
+.remark{
+  margin: -15rpx 0 50rpx;
+    text-align: center;
+   color: #999999;
+ font-size:29rpx;
+}
+.remark1{
+  margin: 15rpx 0 50rpx;
+    text-align: center;
+   color: #999999;
+ font-size:29rpx;
+}
+.cText{
+   color: #999999;
+}

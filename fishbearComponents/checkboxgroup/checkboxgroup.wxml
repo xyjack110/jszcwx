@@ -1,0 +1,22 @@
+<!--fishbearComponents/checkboxgroup/checkboxgroup.wxml-->
+ 
+<wxs module="m1">
+var inStr = function(str,subStr) {
+
+
+  return str.indexOf(subStr);
+}
+
+module.exports.inStr = inStr;
+</wxs> 
+
+<view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange">
+          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.value}}">
+            <view class="weui-cell__hd">
+              <checkbox value="{{item.name}}" checked="{{m1.inStr(    selectValue,item.value)>-1}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </checkbox-group>
+      </view> 

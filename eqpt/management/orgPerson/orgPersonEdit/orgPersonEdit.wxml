@@ -1,0 +1,47 @@
+<!--eqpt/management/orgPerson/orgPersonEdit/orgPersonEdit.wxml-->
+  <view>
+  <view class="weui-cells weui-cells_after-title bigGap">
+  <view class="weui-cell">
+     <view class="textInBlock">
+{{currentPerson.fPsnName.value
+}}
+
+    </view>
+    <image class="iconInBlock" src="{{currentPerson.fPsnImg.value}}"></image>
+ 
+
+  </view>
+</view>
+
+
+
+
+
+
+
+
+<view class="page-section-title"><text>权限设置 </text>
+<!-- <text class="clear" bindtap='clearAuthBtn'>清空</text> -->
+ </view>
+
+
+
+<checkboxgroup id='dialog1' 
+    items=  "{{items}}"
+    selectValue="{{currentPerson.fPsnAuth.value}}"
+bind:userSelect="getSelectedValue"
+
+></checkboxgroup>
+<view class='t'>
+<view>1. 公司的创建者,资产管理员,人员管理可以进入报表中心</view>
+<view>2.人员管理员，资产管理员，能查看报表中心对应权限的模块</view>
+<view>3.除了上述模块外,公司创建者还可以设置所有人员的权限</view>
+</view>
+ <view class="SureBtn">
+    <button type="primary" bindtap='updataPsnAuthBtn'> 确定</button>
+
+       <button  type="default" bindtap='deletePsnAuthBtn'> 删除该员工</button>
+  </view>
+
+
+  </view>

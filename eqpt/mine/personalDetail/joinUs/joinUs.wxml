@@ -1,0 +1,18 @@
+<!--eqpt/mine/personalDetail/joinUs/joinUs.wxml-->
+<view>
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="{{src}}"></image>
+  </view>
+
+
+
+
+
+
+
+  <view class="Text">
+    <view>请接收方，使用微信扫描该二维码，加入我的部门</view>
+
+
+  </view>
+</view>

@@ -1,0 +1,51 @@
+/* eqpt/management/management.wxss */
+
+.whiteBlock{
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgInBlock{
+  width: 80rpx;
+  height: 80rpx;
+margin: 0 15rpx;
+}
+.setImg{
+   width: 55rpx;
+  height: 55rpx;
+}
+.textInBlock{
+  margin: 0 30rpx;
+   flex: 1;
+}
+.remarkText{
+ color: #999999;
+ font-size:30rpx;
+}
+.iconInBlock{
+    width: 60rpx;
+  height: 60rpx;
+}
+.smallGap{
+  margin: 10rpx 0;
+    padding: 20rpx 30rpx;
+}
+.bigGap{
+    padding: 30rpx;
+    margin: 30rpx 0 0;
+}
+.lineGap{
+    padding: 20rpx 30rpx;
+  margin: 10rpx 0;
+}
+.redText{
+   color: red;
+}
+.weui-cell_active {
+  background-color: #ECECEC;
+}
+.titleText{
+  margin: 0 0 0 30rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,15 @@
+/* eqpt/mine/personalDetail/joinUs/joinUs.wxss */
+.imgEqpt{
+    width: 500rpx;
+  height: 500rpx;
+
+
+}
+.imgEqptView{
+  text-align: center;
+  margin: 150rpx 0;
+}
+.Text{
+   color: #999999;
+   margin: 0 30rpx;
+}

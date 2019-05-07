@@ -1,0 +1,143 @@
+<!--eqpt/eqptDetail/eqptDetail.wxml-->
+
+<wxs module="m1">
+  var dateformat = function(date) {
+
+
+    return date.substring(0, 10);
+  }
+
+  module.exports.dateformat = dateformat;
+</wxs>
+
+
+<view>
+
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="{{eqptDetail.fEqpImg1}}" mode="aspectFit" bindtap='previewImage'></image>
+  </view>
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      资产公司
+    </view>
+    <view class="textInBlock">{{eqptDetail.fCmpyName.value}}</view>
+  </view>
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      资产类别
+    </view>
+    <view class="textInBlock">{{eqptDetail.fEqpType.value}} </view>
+  </view>
+
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      规格名称
+    </view>
+    <view class="textInBlock">
+
+    {{eqptDetail.fEqpSize.value}}
+    
+    </view>
+  </view>
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      供应商
+    </view>
+    <view class="textInBlock">{{eqptDetail.fProducer.value}}</view>
+  </view>
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      启用日期
+    </view>
+    <view class="textInBlock">{{eqptDetail.fEqptDate.value}}</view>
+  </view>
+
+    <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+ 财务价值
+    </view>
+    <view class="textInBlock">{{eqptDetail.fFinancial.value}}</view>
+  </view>
+
+
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      {{eqptDetail.fEqpDesc.value}}
+    </view>
+
+  </view>
+
+
+
+  <view class="whiteBlock bigGap" bindtap='checkEqptUseRecord' hover-class="weui-cell_active">
+
+    <view class="remarkText">
+      当前用户
+    </view>
+    <view class="textInBlock">{{eqptDetail.fPsnName.value}}</view>
+    <image class="useImgEqpt" src="{{eqptDetail.fPsnImg.value}}"></image>
+  </view>
+
+  <view class="whiteBlock lineGap">
+
+    <view class="remarkText">
+      资产状态
+    </view>
+    <view class="textInBlock">{{eqptDetail.fEqpStatus.value}}</view>
+  </view>
+
+  <view class="whiteBlock lineGap" wx:if="{{currentEqptRepairInfo.fOperationTime.value}}" hover-class="weui-cell_active">
+
+    <view class="remarkText">
+      当前报修
+    </view>
+    <view class="textInBlock" bindtap='checkRepairInfoDetail'>{{currentEqptRepairInfo.fOperationTime.value?m1.dateformat(currentEqptRepairInfo.fOperationTime.value):""}}</view>
+  </view>
+
+
+
+
+
+
+  <view class="whiteBlock lineGap" wx:if="{{currentCheckDetail.fOperationTime.value}}" hover-class="weui-cell_active">
+
+    <view class="remarkText">
+      最近点检
+    </view>
+    <view class="textInBlock" bindtap='checkDetail'>{{currentCheckDetail.fOperationTime.value?m1.dateformat(currentCheckDetail.fOperationTime.value):""}}</view>
+    <image class="useImgEqpt" src="{{currentCheckDetail.fPsnImg.value}}"></image>
+  </view>
+
+
+  <view class="whiteBlock lineGap" wx:if="{{currentInventory.fOperationTime2.value}}" hover-class="weui-cell_active">
+
+    <view class="remarkText">
+      当前盘点单
+    </view>
+    <view class="textInBlock orangeText">{{currentInventory.fOperationTime2.value?m1.dateformat(currentInventory.fOperationTime2.value):""}}</view>
+    <image class="useImgEqpt" src="{{currentInventory.fPsnImg.value}}"></image>
+  </view>
+
+  <view class="bigGap">
+    <button type="primary" bindtap='eqptRecord' wx:if="{{actionSheet}}"> 资产记录登记</button>
+  </view>
+
+
+
+
+
+
+
+</view>

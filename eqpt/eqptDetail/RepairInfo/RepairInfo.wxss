@@ -1,0 +1,35 @@
+/* eqpt/eqptDetail/RepairInfo/RepairInfo.wxss */
+
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.imgEqpt{
+    width: 160rpx;
+  height: 160rpx;
+
+
+}
+.whiteBlock{
+
+    background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.lineGap{
+  margin: 5rpx 0 -30rpx;
+    padding: 0rpx 30rpx;
+
+
+
+}
+.SureBtn{
+margin-top: 50rpx;
+      padding: 20rpx 30rpx;
+}
+.positionImg{
+
+  width :55rpx;
+  height: 55rpx;
+}

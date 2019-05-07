@@ -1,0 +1,9 @@
+/* eqpt/mine/personalDetail/createCompy/createCompy.wxss */
+page{
+    background-color: #FFFFFF;
+}
+
+.weui-cells{
+  margin: 5% 5% 20%;
+    text-align: left;
+}

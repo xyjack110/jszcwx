@@ -1,0 +1,126 @@
+<!--eqpt/mine/personalDetail/personalDetail.wxml-->
+
+
+
+<view>
+  <view class="weui-toptips weui-toptips_warn " wx:if="{{showTopTips}}">{{ErrorMsg}}</view>
+
+
+
+  <view class="whiteBlock bigGap" wx:if="{{userInfo.fID.value}}">
+    <view class="textInBlock">
+      头像
+
+    </view>
+    <view class='img'>
+
+
+    </view>
+    <view>
+
+
+      <button class="{{userInfo.avatarUrl.value?'btn':'btn1'}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="checkPersonalDetail">{{userInfo.avatarUrl.value?"":"微信登录"}}
+        <image wx:if="{{userInfo.avatarUrl.value}}" class="iconInBlock" src="{{userInfo.avatarUrl.value}}" mode="aspectFill"></image>
+
+      </button>
+
+
+    </view>
+  </view>
+
+
+
+
+
+  <view class="whiteBlock lineGap" bindtap='editName' hover-class="weui-cell_active" wx:if="{{userInfo.fID.value}}">
+
+    <view class="textInBlock">
+      姓名
+
+    </view>
+    <view class="remarkText">
+      <text>{{userInfo.psnName.value}}</text>
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+  <view class="whiteBlock lineGap" bindtap='editPhone' hover-class="weui-cell_active" wx:if="{{userInfo.fID.value}}">
+
+    <view class="textInBlock">
+      手机
+
+    </view>
+    <view class="remarkText">
+      <text>{{userInfo.cellphone.value}}</text>
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+
+  <view class="whiteBlock lineGap" hover-class="weui-cell_active" bindtap='MyLeve' wx:if="{{orgInfo.fID.value}}">
+
+    <view class="textInBlock">
+      查看
+
+    </view>
+    <view class="remarkText">
+      {{orgInfo.fName.value}}
+    </view>
+    <view class='navigator-arrow'></view>
+    <!-- <view class="cText" bindtap='personClear'>清除</view> -->
+  </view>
+
+
+
+
+
+  <view class="whiteBlock lineGap" hover-class="weui-cell_active" bindtap='changePost' wx:if="{{orgInfo.fID.value}}">
+
+    <view class="textInBlock">
+      切换
+
+    </view>
+    <view class="remarkText">
+
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+
+  <view class="whiteBlock lineGap" hover-class="weui-cell_active" bindtap='managerChange' wx:if="{{managerAuth}}">
+
+    <view class="textInBlock">
+      顶级权限交接
+
+    </view>
+    <view class="remarkText">
+
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+  <!-- <view class="SureBtn" wx:if="{{cmpyInfo.fCmpyID}}">
+    <button type="primary" bindtap='joinUs'> 邀请下属加入</button>
+        <button type="primary" bindtap='joinCompy' plain="true" wx:if="{{userInfo.fDeptID=='.'|| userInfo.userID==cmpyInfo.fManagerID}}"> 邀请同事加入</button>
+  </view> -->
+
+
+
+
+  <view class="SureBtn" wx:if="{{!cmpyInfo.fID.value && userInfo.fID.value}}">
+    <button type="primary" bindtap='createCompy' plain="true"> 创建公司</button>
+  </view>
+
+  <!-- <view class="SureBtn" wx:if="{{managerAuth}}">
+        <button type="primary" bindtap='delCompy' plain="true"> 删除公司</button>
+      </view> -->
+</view>

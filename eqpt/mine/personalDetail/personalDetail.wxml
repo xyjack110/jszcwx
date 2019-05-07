@@ -1,0 +1,108 @@
+<!--eqpt/mine/personalDetail/personalDetail.wxml-->
+<view>
+
+
+
+  <view class="whiteBlock bigGap">
+    <view class="textInBlock">
+      头像
+
+    </view>
+    <view class='img'>
+    <image class="iconInBlock" src="{{userInfo.fPsnImg}}" mode="aspectFill"></image>
+</view>
+
+  </view>
+
+
+
+  <view class="whiteBlock lineGap" bindtap='editName'  hover-class="weui-cell_active">
+
+    <view class="textInBlock">
+      姓名
+
+    </view>
+    <view class="remarkText">
+      <text>{{userInfo.fPsnName}}</text>
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+  <view class="whiteBlock lineGap" bindtap='editPhone' hover-class="weui-cell_active">
+
+    <view class="textInBlock"  >
+      手机号
+
+    </view>
+    <view class="remarkText">
+      <text>{{userInfo.fCellphone}}</text>
+    </view>
+    <view class='navigator-arrow'></view>
+  </view>
+
+
+  <view class="whiteBlock lineGap"  hover-class="weui-cell_active" wx:if="{{cmpyInfo.fCmpyID}}" bindtap='MyLeve'>
+
+    <view class="textInBlock">
+      所属部门
+
+    </view>
+    <view class="remarkText" >
+      <text>{{fDeptName}}</text>
+    </view>
+        <view class='navigator-arrow'></view>
+    <!-- <view class="cText" bindtap='personClear'>清除</view> -->
+  </view>
+
+
+  <view class="whiteBlock lineGap" wx:if="{{userInfo.fPsnAuth}}"  hover-class="weui-cell_active">
+
+    <view class="textInBlock">
+      权限
+
+    </view>
+    <view class="remarkText">
+      <text bindlongpress='management'>{{userInfo.fPsnAuth}}</text>
+    </view>
+
+
+  </view>
+
+
+  <view class="whiteBlock lineGap" wx:if="{{userInfo.fMyDept && cmpyInfo.fCmpyID}}"  hover-class="weui-cell_active" bindtap='updateDeptName'>
+
+    <view class="textInBlock">
+      负责部门
+
+    </view>
+    <view class="remarkText">
+      <text >{{userInfo.fMyDept}}</text>
+    </view>
+    <!-- <view class="cText" bindtap='handOut'>交权</view> -->
+        <view class='navigator-arrow'></view>
+  </view>
+
+
+
+
+
+
+
+
+  <view class="SureBtn">
+
+  </view>
+
+
+  <view class="SureBtn" wx:if="{{cmpyInfo.fCmpyID}}">
+    <button type="primary" bindtap='joinUs'> 邀请下属加入</button>
+        <button type="primary" bindtap='joinCompy' plain="true" wx:if="{{userInfo.fDeptID=='.'|| userInfo.userID==cmpyInfo.fManagerID}}"> 邀请同事加入</button>
+  </view>
+
+
+
+
+    <view class="SureBtn" wx:if="{{!cmpyInfo.fCmpyID}}">
+    <button type="primary" bindtap='createCompy' plain="true"> 创建公司</button>
+  </view>
+</view>

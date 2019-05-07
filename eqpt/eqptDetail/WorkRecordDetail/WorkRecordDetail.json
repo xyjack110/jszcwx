@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "uploader": "/fishbearComponents/uploader/uploader"
+  },
+  "navigationBarTitleText": "查看工作记录详细"}

@@ -1,0 +1,117 @@
+<!--eqpt/management/evantoryDetail/evantoryDetail.wxml-->
+<view> 
+  <view class="imgEqptView">
+    <image class="imgEqpt" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL8TXGtFLpibm1XUfzMAt9IibseEaicricCpQnK77xTyJ7zxbWu2iaMpWRWgQkH3fnpwFqsAs59aQoNwuQ/0"></image>
+  </view>
+
+
+
+    
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label ">点检盘点</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="weui-input">{{array[index]}}</view>
+            </picker>
+          </view>
+        </view>
+
+      </view>
+
+    <view class="weui-cells">
+                  <textarea class="remarkText" placeholder="点检盘点备注"></textarea>
+    </view>
+
+
+
+
+
+
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="weui-uploader">
+              <view class="weui-uploader__hd">
+                <view class="weui-uploader__title">资产图片</view>
+                <view class="weui-uploader__info">0/9</view>
+                <view class="weui-uploader__info"></view>
+              </view>
+              <view class="weui-uploader__bd">
+                <view class="weui-uploader__files">
+                  <block wx:for="{{KeyList}}" wx:for-item="image" wx:key="qq">
+                    <view class="weui-uploader__file">
+                      <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                    </view>
+                  </block>
+                </view>
+                <view class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="simpleUpload"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells__title">点检盘点明细</view>
+
+      <view class="weui-cells weui-cells_after-title samllGap">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">外观</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="weui-input">{{array[index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+
+      <view class="weui-cells weui-cells_after-title samllGap">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">电源</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="weui-input">{{array[index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+
+
+      <view class="weui-cells weui-cells_after-title samllGap">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">水温</view>
+          </view>
+          <view class="weui-cell__bd">
+   <view class="body-view">
+          <slider class="slide" value="50" bindchange="slider3change" show-value/>
+        </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+</view>

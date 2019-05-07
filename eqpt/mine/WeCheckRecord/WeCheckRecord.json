@@ -1,0 +1,8 @@
+{
+      "usingComponents": {
+        "search": "/fishbearComponents/search/search"
+      },
+  
+  "onReachBottomDistance": 100,
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "我们的点检盘点记录"}

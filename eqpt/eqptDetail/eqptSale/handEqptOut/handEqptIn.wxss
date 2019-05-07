@@ -1,0 +1,44 @@
+/* eqpt/eqptDetail/eqptSale/handEqptOut/handEqptIn.wxss */
+.whiteBlock{
+
+    background-color: white;
+
+  display: flex;
+  align-items: center;
+}
+.imgEqpt{
+    width: 160rpx;
+  height: 160rpx;
+
+
+}
+.imgEqptView{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.remarkText{
+ color: #999999;
+ font-size:29rpx;
+}
+.textInBlock{
+  margin: 0 30rpx;
+   flex: 1;
+}
+
+.lineGap{
+  margin: 5rpx 0;
+    padding: 20rpx 30rpx;
+}
+.useImgEqpt{
+      width: 55rpx;
+  height: 55rpx;
+
+
+}
+.bigGap{
+    margin: 30rpx 0 0;
+      padding: 20rpx 30rpx;
+}
+
+
+

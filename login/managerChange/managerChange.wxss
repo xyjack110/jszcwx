@@ -1,0 +1,14 @@
+/* login/managerChange/managerChange.wxss */
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+.txt{
+  text-align:left;
+margin-left:120rpx;
+
+}
+.joinBtn{
+  margin: 0rpx
+}
